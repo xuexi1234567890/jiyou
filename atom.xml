@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://localhost:4000</id>
+    <id>https://xuexi1234567890.github.io/jiyou/</id>
     <title>集邮</title>
-    <updated>2024-05-05T12:29:51.351Z</updated>
+    <updated>2024-05-05T13:00:29.856Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="http://localhost:4000"/>
-    <link rel="self" href="http://localhost:4000/atom.xml"/>
+    <link rel="alternate" href="https://xuexi1234567890.github.io/jiyou/"/>
+    <link rel="self" href="https://xuexi1234567890.github.io/jiyou/atom.xml"/>
     <subtitle>集邮不是集邮，可能是某种收藏癖好，收集创客相关</subtitle>
-    <logo>http://localhost:4000/images/avatar.png</logo>
-    <icon>http://localhost:4000/favicon.ico</icon>
+    <logo>https://xuexi1234567890.github.io/jiyou/images/avatar.png</logo>
+    <icon>https://xuexi1234567890.github.io/jiyou/favicon.ico</icon>
     <rights>All rights reserved 2024, 集邮</rights>
     <entry>
         <title type="html"><![CDATA[ESP32cam通过HTTP上传图片]]></title>
-        <id>http://localhost:4000/tmaeG9IDc/</id>
-        <link href="http://localhost:4000/tmaeG9IDc/">
+        <id>https://xuexi1234567890.github.io/jiyou/tmaeG9IDc/</id>
+        <link href="https://xuexi1234567890.github.io/jiyou/tmaeG9IDc/">
         </link>
         <updated>2024-03-28T10:22:11.000Z</updated>
         <summary type="html"><![CDATA[<p>不知道为啥我的下载底座放久了竟然坏了真神奇，折腾了两天反复的找代码让GPT修改都不行，最后找到了一个可以的很兴奋。</p>
@@ -23,15 +23,15 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[ESP32CAM项目资料收集]]></title>
-        <id>http://localhost:4000/oyVSS0oy8/</id>
-        <link href="http://localhost:4000/oyVSS0oy8/">
+        <id>https://xuexi1234567890.github.io/jiyou/oyVSS0oy8/</id>
+        <link href="https://xuexi1234567890.github.io/jiyou/oyVSS0oy8/">
         </link>
         <updated>2024-03-27T09:36:52.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[mind+用户库TM1637数码管使用技巧]]></title>
-        <id>http://localhost:4000/a9Rc4MjxM/</id>
-        <link href="http://localhost:4000/a9Rc4MjxM/">
+        <id>https://xuexi1234567890.github.io/jiyou/a9Rc4MjxM/</id>
+        <link href="https://xuexi1234567890.github.io/jiyou/a9Rc4MjxM/">
         </link>
         <updated>2024-03-27T08:45:36.000Z</updated>
         <summary type="html"><![CDATA[<p>如果你也跟我一样被这玩意折磨过，那么恭喜你，现在可以脱离苦海了。</p>
@@ -41,15 +41,15 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[测试MD插入视频]]></title>
-        <id>http://localhost:4000/_QLCfS0nE/</id>
-        <link href="http://localhost:4000/_QLCfS0nE/">
+        <id>https://xuexi1234567890.github.io/jiyou/_QLCfS0nE/</id>
+        <link href="https://xuexi1234567890.github.io/jiyou/_QLCfS0nE/">
         </link>
         <updated>2024-03-24T11:11:10.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[编码电机小车走直线调试记录]]></title>
-        <id>http://localhost:4000/mrHEj6sbS/</id>
-        <link href="http://localhost:4000/mrHEj6sbS/">
+        <id>https://xuexi1234567890.github.io/jiyou/mrHEj6sbS/</id>
+        <link href="https://xuexi1234567890.github.io/jiyou/mrHEj6sbS/">
         </link>
         <updated>2024-03-15T10:32:38.000Z</updated>
         <summary type="html"><![CDATA[<p>编码电机小车走直线调试记录</p>
@@ -61,8 +61,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[尚视界1.44寸屏microblocks编译配置]]></title>
-        <id>http://localhost:4000/tAT_jwKDq/</id>
-        <link href="http://localhost:4000/tAT_jwKDq/">
+        <id>https://xuexi1234567890.github.io/jiyou/tAT_jwKDq/</id>
+        <link href="https://xuexi1234567890.github.io/jiyou/tAT_jwKDq/">
         </link>
         <updated>2024-03-13T11:45:46.000Z</updated>
         <summary type="html"><![CDATA[<p>乌龙<br>
@@ -74,8 +74,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[使用platformio编译microblocks固件]]></title>
-        <id>http://localhost:4000/e8Ji4GX3-/</id>
-        <link href="http://localhost:4000/e8Ji4GX3-/">
+        <id>https://xuexi1234567890.github.io/jiyou/e8Ji4GX3-/</id>
+        <link href="https://xuexi1234567890.github.io/jiyou/e8Ji4GX3-/">
         </link>
         <updated>2024-03-03T11:32:35.000Z</updated>
         <summary type="html"><![CDATA[<p>使用platformio编译microblocks固件</p>
@@ -89,8 +89,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[安卓手机使用APPinventor制作基于MQTT通信客户端]]></title>
-        <id>http://localhost:4000/aJ-k1MPgT/</id>
-        <link href="http://localhost:4000/aJ-k1MPgT/">
+        <id>https://xuexi1234567890.github.io/jiyou/aJ-k1MPgT/</id>
+        <link href="https://xuexi1234567890.github.io/jiyou/aJ-k1MPgT/">
         </link>
         <updated>2024-02-20T09:13:45.000Z</updated>
         <summary type="html"><![CDATA[<p>以下是根据《安卓手机使用 APPinventor 制作基于 MQTT 通信客户端》生成的多个不同表述的标题：</p>
@@ -126,15 +126,15 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[一次失败的尝试：995舵机四足机器人]]></title>
-        <id>http://localhost:4000/0_Sn0WBXJ/</id>
-        <link href="http://localhost:4000/0_Sn0WBXJ/">
+        <id>https://xuexi1234567890.github.io/jiyou/0_Sn0WBXJ/</id>
+        <link href="https://xuexi1234567890.github.io/jiyou/0_Sn0WBXJ/">
         </link>
         <updated>2024-01-29T03:49:00.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[SNR9816TTS模块microblocks库使用教程]]></title>
-        <id>http://localhost:4000/6TVbxY2QR/</id>
-        <link href="http://localhost:4000/6TVbxY2QR/">
+        <id>https://xuexi1234567890.github.io/jiyou/6TVbxY2QR/</id>
+        <link href="https://xuexi1234567890.github.io/jiyou/6TVbxY2QR/">
         </link>
         <updated>2024-01-28T04:21:13.000Z</updated>
     </entry>
