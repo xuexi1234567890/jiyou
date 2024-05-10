@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xuexi1234567890.github.io/jiyou/</id>
     <title>集邮</title>
-    <updated>2024-05-10T08:31:00.705Z</updated>
+    <updated>2024-05-10T09:45:10.733Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xuexi1234567890.github.io/jiyou/"/>
     <link rel="self" href="https://xuexi1234567890.github.io/jiyou/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://xuexi1234567890.github.io/jiyou/images/avatar.png</logo>
     <icon>https://xuexi1234567890.github.io/jiyou/favicon.ico</icon>
     <rights>All rights reserved 2024, 集邮</rights>
+    <entry>
+        <title type="html"><![CDATA[测试]]></title>
+        <id>https://xuexi1234567890.github.io/jiyou/g3aZm1xAZ/</id>
+        <link href="https://xuexi1234567890.github.io/jiyou/g3aZm1xAZ/">
+        </link>
+        <updated>2024-05-10T09:44:43.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[ESP32cam通过HTTP上传图片]]></title>
         <id>https://xuexi1234567890.github.io/jiyou/tmaeG9IDc/</id>
@@ -130,12 +137,5 @@
         <link href="https://xuexi1234567890.github.io/jiyou/0_Sn0WBXJ/">
         </link>
         <updated>2024-01-29T03:49:00.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[SNR9816TTS模块microblocks库使用教程]]></title>
-        <id>https://xuexi1234567890.github.io/jiyou/6TVbxY2QR/</id>
-        <link href="https://xuexi1234567890.github.io/jiyou/6TVbxY2QR/">
-        </link>
-        <updated>2024-01-28T04:21:13.000Z</updated>
     </entry>
 </feed>
