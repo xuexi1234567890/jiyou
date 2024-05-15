@@ -1,38 +1,43 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>实验小菜园</title>
-	<meta charset="UTF-8"> <!-- 设置字符编码为 UTF-8 -->
-	<style>
-		body {
-		  text-align: center;
-		  background-color: beige;
-		}
-		/* 添加时间显示的样式 */
-		#timeDisplay {
-    color: #0aed8b; /* 这里将文本颜色设置为一种蓝色，您可以根据需要更改颜色值 */
-			font-size: 24px;
-			margin-bottom: 20px;
-		}
-	  </style>
+  <title>实验小菜园</title>
+  <meta charset="UTF-8"> <!-- 设置字符编码为 UTF-8 -->
+  <style>
+    body {
+      text-align: center;
+      background-color: beige;
+    }
+
+    /* 添加时间显示的样式 */
+    #timeDisplay {
+      color: #0aed8b;
+      /* 这里将文本颜色设置为一种蓝色，您可以根据需要更改颜色值 */
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
+
 <body>
-	<div>
-		<h1>实验小菜园</h1>
-		<p>欢迎来到实验小菜园！</p>
-		<p>限时项目，2024年5月16号上线，预计存在一周。</p>
-	</div>
-	<div id="timeDisplay"></div>
-	<div>
-		<h2>实时数据</h2>
-		<p id="humidityDisplay"></p>
-		<p id="temperatureDisplay"></p>
-		<p id="lightDisplay"></p>
-	</div>
-	<div>
-		<h2>生长情况</h2>
-		<img src="https://raw.gitmirror.com/xuexi1234567890/jiyou/main/post-images/xcy/cy1.jpg" alt="菜园1" style="width: 80%; height: auto; display: block; margin: 0 auto;">
-	</div>
+  <div>
+    <h1>实验小菜园</h1>
+    <p>欢迎来到实验小菜园！</p>
+    <p>限时项目，2024年5月16号上线，预计存在一周。</p>
+  </div>
+  <div id="timeDisplay"></div>
+  <div>
+    <h2>环境数据</h2>
+    <p id="humidityDisplay"></p>
+    <p id="temperatureDisplay"></p>
+    <p id="lightDisplay"></p>
+  </div>
+  <div>
+    <h2>生长情况</h2>
+    <img src="https://raw.gitmirror.com/xuexi1234567890/jiyou/main/post-images/xcy/cy1.jpg" alt="菜园1"
+      style="width: 80%; height: auto; display: block; margin: 0 auto;">
+  </div>
   <script>
     function fetchData() {
       // 获取湿度数据
@@ -40,7 +45,8 @@
         .then(response => response.json())
         .then(data => {
           // 更新页面上的湿度数据
-          document.getElementById('humidityDisplay').innerText = `♒️湿度：${data.Humidity || 0}%`;
+          const humidity = data.cysd || 0; // 默认为0，避免出现 undefined
+          document.getElementById('humidityDisplay').innerText = `♒️土壤湿度：${humidity}%`;
         })
         .catch(error => {
           console.error('获取湿度数据时发生错误:', error);
@@ -51,7 +57,7 @@
         .then(response => response.json())
         .then(data => {
           // 更新页面上的温度数据
-          const temperature = data.Temperature || 0; // 默认为0，避免出现 undefined
+          const temperature = data.cywd || 0; // 默认为0，避免出现 undefined
           document.getElementById('temperatureDisplay').innerText = `🌡️温度：${temperature}℃`;
         })
         .catch(error => {
@@ -63,11 +69,11 @@
         .then(response => response.json())
         .then(data => {
           // 更新页面上的温度数据
-          const light = data.light || 0; // 默认为0，避免出现 undefined
-          document.getElementById('lightDisplay').innerText = `☀️光照：${light}℃`;
+          const light = data.cyld || 0; // 默认为0，避免出现 undefined
+          document.getElementById('lightDisplay').innerText = `☀️光照：${light}`;
         })
         .catch(error => {
-          console.error('获取18b20数据时发生错误:', error);
+          console.error('获取光照数据时发生错误:', error);
         });
     }
 
@@ -89,4 +95,5 @@
     updateTime();
   </script>
 </body>
+
 </html>
