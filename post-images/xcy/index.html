@@ -86,7 +86,7 @@
         .then(data => {
           // 更新页面上的温度数据
           const trsd = data.trsd || 0; // 默认为0，避免出现 undefined
-          document.getElementById('lightDisplay').innerText = `🪴土壤湿度：${trsd}`;
+          document.getElementById('trsdDisplay').innerText = `🪴土壤湿度：${trsd}`;
         })
         .catch(error => {
           console.error('获取土壤湿度数据时发生错误:', error);
