@@ -63,7 +63,7 @@
         .then(data => {
           // 更新页面上的温度数据
           const temperature = data.cywd || 0; // 默认为0，避免出现 undefined
-          document.getElementById('temperatureDisplay').innerText = `🌡️温度：${temperature}℃`;
+          document.getElementById('temperatureDisplay').innerText = `🌡️菜园温度：${temperature}℃`;
         })
         .catch(error => {
           console.error('获取温度数据时发生错误:', error);
@@ -75,7 +75,7 @@
         .then(data => {
           // 更新页面上的温度数据
           const light = data.cyld || 0; // 默认为0，避免出现 undefined
-          document.getElementById('lightDisplay').innerText = `☀️光照：${light}`;
+          document.getElementById('lightDisplay').innerText = `☀️菜园光照：${light}`;
         })
         .catch(error => {
           console.error('获取光照数据时发生错误:', error);
