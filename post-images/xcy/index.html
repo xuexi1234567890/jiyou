@@ -33,6 +33,7 @@
     <p id="humidityDisplay"></p>
     <p id="temperatureDisplay"></p>
     <p id="lightDisplay"></p>
+    <p id="trsdDisplay"></p>
   </div>
   <div>
     <h2>生长情况</h2>
@@ -50,7 +51,7 @@
         .then(data => {
           // 更新页面上的湿度数据
           const humidity = data.cysd || 0; // 默认为0，避免出现 undefined
-          document.getElementById('humidityDisplay').innerText = `♒️土壤湿度：${humidity}%`;
+          document.getElementById('humidityDisplay').innerText = `♒️菜园湿度：${humidity}%`;
         })
         .catch(error => {
           console.error('获取湿度数据时发生错误:', error);
@@ -78,6 +79,17 @@
         })
         .catch(error => {
           console.error('获取光照数据时发生错误:', error);
+        });
+      // 获取土壤湿度数据
+      fetch('https://tinywebdb.appinventor.space/api?user=share&secret=everyone&action=get&tag=trsd')
+        .then(response => response.json())
+        .then(data => {
+          // 更新页面上的温度数据
+          const trsd = data.trsd || 0; // 默认为0，避免出现 undefined
+          document.getElementById('lightDisplay').innerText = `🪴土壤湿度：${trsd}`;
+        })
+        .catch(error => {
+          console.error('获取土壤湿度数据时发生错误:', error);
         });
     }
 
