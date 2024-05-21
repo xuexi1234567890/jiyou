@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xuexi1234567890.github.io/jiyou/</id>
     <title>集邮</title>
-    <updated>2024-05-15T01:53:30.348Z</updated>
+    <updated>2024-05-21T01:26:16.682Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xuexi1234567890.github.io/jiyou/"/>
     <link rel="self" href="https://xuexi1234567890.github.io/jiyou/atom.xml"/>
@@ -10,6 +10,17 @@
     <logo>https://xuexi1234567890.github.io/jiyou/images/avatar.png</logo>
     <icon>https://xuexi1234567890.github.io/jiyou/favicon.ico</icon>
     <rights>All rights reserved 2024, 集邮</rights>
+    <entry>
+        <title type="html"><![CDATA[小菜园制作记录]]></title>
+        <id>https://xuexi1234567890.github.io/jiyou/qFgBIn6jB/</id>
+        <link href="https://xuexi1234567890.github.io/jiyou/qFgBIn6jB/">
+        </link>
+        <updated>2024-05-21T01:06:35.000Z</updated>
+        <summary type="html"><![CDATA[<p>做了一个桌面小菜园，主要是想使用micropython实现数据的上传，使用tinywebdb数据库，把数据上传到网络微数据库，然后制作一个网页用来展示数据和植物生长情况。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>做了一个桌面小菜园，主要是想使用micropython实现数据的上传，使用tinywebdb数据库，把数据上传到网络微数据库，然后制作一个网页用来展示数据和植物生长情况。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[ESP32cam通过HTTP上传图片]]></title>
         <id>https://xuexi1234567890.github.io/jiyou/tmaeG9IDc/</id>
@@ -130,12 +141,5 @@
         <link href="https://xuexi1234567890.github.io/jiyou/0_Sn0WBXJ/">
         </link>
         <updated>2024-01-29T03:49:00.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[SNR9816TTS模块microblocks库使用教程]]></title>
-        <id>https://xuexi1234567890.github.io/jiyou/6TVbxY2QR/</id>
-        <link href="https://xuexi1234567890.github.io/jiyou/6TVbxY2QR/">
-        </link>
-        <updated>2024-01-28T04:21:13.000Z</updated>
     </entry>
 </feed>

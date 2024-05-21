@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>实验小菜园</title>
+  <meta charset="UTF-8"> <!-- 设置字符编码为 UTF-8 -->
+  <style>
+    body {
+      text-align: center;
+      background-color: beige;
+      font-size: xx-large;
+    }
+
+    /* 添加时间显示的样式 */
+    #timeDisplay {
+      color: #0aed8b;
+      /* 这里将文本颜色设置为一种蓝色，您可以根据需要更改颜色值 */
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <h1>实验小菜园</h1>
+    <p>欢迎来到实验小菜园！</p>
+    <p>限时项目，2024年5月16号上线，预计存在两周（根据小白菜发芽生长情况）。</p>
+  </div>
+  <div id="timeDisplay"></div>
+  <div>
+    <h2>环境数据</h2>
+    <p id="humidityDisplay"></p>
+    <p id="temperatureDisplay"></p>
+    <p id="lightDisplay"></p>
+    <p id="trsdDisplay"></p>
+  </div>
+  <div>
+    <h2>生长情况</h2>
+    <img src="cy0.jpg" alt="菜园1"
+      style="width: 80%; height: auto; display: block; margin: 0 auto;">
+  </div>
+  <div>
+    <a href="more.html" style="color: crimson;">更多图片……</a>
+  </div>
+  <script>
+    function fetchData() {
+      // 获取湿度数据
+      fetch('https://tinywebdb.appinventor.space/api?user=share&secret=everyone&action=get&tag=cysd')
+        .then(response => response.json())
+        .then(data => {
+          // 更新页面上的湿度数据
+          const humidity = data.cysd || 0; // 默认为0，避免出现 undefined
+          document.getElementById('humidityDisplay').innerText = `♒️菜园湿度：${humidity}%`;
+        })
+        .catch(error => {
+          console.error('获取湿度数据时发生错误:', error);
+        });
+
+      // 获取温度数据
+      fetch('https://tinywebdb.appinventor.space/api?user=share&secret=everyone&action=get&tag=cywd')
+        .then(response => response.json())
+        .then(data => {
+          // 更新页面上的温度数据
+          const temperature = data.cywd || 0; // 默认为0，避免出现 undefined
+          document.getElementById('temperatureDisplay').innerText = `🌡️菜园温度：${temperature}℃`;
+        })
+        .catch(error => {
+          console.error('获取温度数据时发生错误:', error);
+        });
+
+      // 获取温度数据
+      fetch('https://tinywebdb.appinventor.space/api?user=share&secret=everyone&action=get&tag=cyld')
+        .then(response => response.json())
+        .then(data => {
+          // 更新页面上的温度数据
+          const light = data.cyld || 0; // 默认为0，避免出现 undefined
+          document.getElementById('lightDisplay').innerText = `☀️菜园光照：${light}`;
+        })
+        .catch(error => {
+          console.error('获取光照数据时发生错误:', error);
+        });
+      // 获取土壤湿度数据
+      fetch('https://tinywebdb.appinventor.space/api?user=share&secret=everyone&action=get&tag=trsd')
+        .then(response => response.json())
+        .then(data => {
+          // 更新页面上的温度数据
+          const trsd = data.trsd || 0; // 默认为0，避免出现 undefined
+          document.getElementById('trsdDisplay').innerText = `🪴土壤湿度：${trsd}`;
+        })
+        .catch(error => {
+          console.error('获取土壤湿度数据时发生错误:', error);
+        });
+    }
+
+    function updateTime() {
+      const now = new Date();
+      const timeDisplay = document.getElementById('timeDisplay');
+      timeDisplay.textContent = `当前时间：${now.toLocaleTimeString()}`;
+    }
+
+    // 每隔1秒更新时间
+    setInterval(updateTime, 1000);
+
+    // 每隔60秒更新数据
+    setInterval(fetchData, 5000);
+
+    // 初始加载数据
+    fetchData();
+    // 初始加载时间
+    updateTime();
+  </script>
+</body>
+
+</html>
