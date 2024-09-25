@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>ESP32CAM项目资料收集 | 集邮</title>
+<meta name="description" content="集邮不是集邮，可能是某种收藏癖好，收集创客相关">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://xuexi1234567890.github.io/jiyou/favicon.ico?v=1727251694138">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://xuexi1234567890.github.io/jiyou/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://xuexi1234567890.github.io/jiyou">
+        <img class="avatar" src="https://xuexi1234567890.github.io/jiyou/images/avatar.png?v=1727251694138" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://xuexi1234567890.github.io/jiyou">
+        <h1 class="site-title">集邮</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="https://xuexi1234567890.github.io/jiyou" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="https://xuexi1234567890.github.io/jiyou/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="https://xuexi1234567890.github.io/jiyou/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="https://xuexi1234567890.github.io/jiyou/qfwytkg2n" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+            <div class="feature-container" style="background-image: url('https://xuexi1234567890.github.io/jiyou/post-images/oyVSS0oy8.png')">
+            </div>
+          
+          <h2 class="post-title">ESP32CAM项目资料收集</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2024-03-27</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/nanNyPr23/">
+                    摄像头
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/TzAeEkVsA5/">
+                    人脸识别
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/VmRIcG36a5/">
+                    视频
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content" v-pre>
+            <p>手机app控制esp32-cam拍照上传，tcp和mqtt协议<a href="http://t.csdnimg.cn/5RHfm">http://t.csdnimg.cn/5RHfm</a></p>
+<p>ESP-WHO 是基于乐鑫芯片的图像处理开发平台，其中包含了实际应用中可能出现的开发示例。<a href="https://github.com/espressif/esp-who/blob/master/README_CN.md">https://github.com/espressif/esp-who/blob/master/README_CN.md</a><br>
+<strong>ESP32 相机项目</strong><a href="https://robotzero.one/esp32-camera-projects/">https://robotzero.one/esp32-camera-projects/</a><br>
+此网站上提供了多个使用 ESP32 摄像头模块的教程，例如 ESP32-CAM、ESP-EYE 和 TTGO ESP 摄像头。为了更容易找到一个项目，我在下面列出了它们，并附有简短的摘要。有些项目只是使用相机来捕捉图像或显示视频。有些有人脸检测和识别的说明。人脸检测通常要简单得多，因为代码只检测人脸的存在。人脸识别更复杂，需要更多步骤来设置，因为必须首先对人脸进行数字映射并保存到模块中，然后才能使用它来“记住”人脸。</p>
+<p>最容易开始和测试相机的项目是相机 Web 服务器示例，因为它已经设置好可以运行了。在Arduino IDE中，这需要10分钟，您可以测试流媒体，人脸检测和人脸识别。Arduino IDE 教程在这里： https://robotzero.one/esp32-cam-arduino-ide/ 如果您使用乐鑫 IDF，这里有一个教程： https://robotzero.one/esp32-camera-module/</p>
+<p>如果您只想从相机录制图像而不进行面部检测或识别，另一种选择是延时教程，其中包含三个保存图像的选项： https://robotzero.one/time-lapse-esp32-cameras/</p>
+<p>另一个简单的项目是用人脸检测来控制Sonoff。您不需要 Sonoff 开关。您可以将数据发送到另一台设备，或者只是点亮 LED。本教程在这里： https://robotzero.one/unlock-door-face-detection-sonoff/</p>
+<p>更进一步，这是一个人脸识别教程，其中人的脸永久存储在设备上。Camera Web Server 示例不保存人脸，因此当 ESP32 重新启动时，人脸数据会丢失。本教程 https://robotzero.one/esp32-face-door-entry/ 解释了如何设置 ESP32 以保存人脸，以及如何使用人脸识别来控制门锁等设备。</p>
+<p>教程 https://robotzero.one/esp-who-recognition-with-names/ 中介绍了一个更高级的系统，其中名称与捕获的人脸数据一起保存。完成本教程后，当使用 Blynk 识别人脸时，您可以向您的手机发送消息：https://robotzero.one/face-recognition-with-blynk/</p>
+<p>一个完整的人脸识别访问系统，将“门禁”和“带姓名”教程结合到一个门禁系统中，您可以在其中添加和删除允许访问某个区域的列表中的人员： https://robotzero.one/access-control-with-face-recognition/</p>
+<p>如果你喜欢和机器人一起玩，本教程有一个面部跟随自动平衡机器人：https://robotzero.one/face-tracking-robot/</p>
+<p>如果您有 3D 打印机，则有两个用于创建相机的项目;在检测到人脸时自动拍照的自拍相机 – https://robotzero.one/esp32-cam-tft-selfie/ 和带有触摸开关的相机，可以释放快门并浏览 microSD 卡上的图像：https://robotzero.one/esp32-cam-oled-capacitive-touch-buttons/</p>
+<p>最后，另一个相当简单的教程，仅适用于带有 PIR 运动传感器的 TTGO T-Camera： https://robotzero.one/ttgo-security-camera-pir/ 如果有人打开冰箱门，这个会通过发送照片来保护冰箱中的啤酒或巧克力！</p>
+<p>该项目使用 Microsoft Cloud Vision API 识别和描述场景，并输出文本和语音描述 – https://robotzero.one/esp32-cam-scene-analyzer/</p>
+<p><strong>又一合集</strong><br>
+<a href="https://randomnerdtutorials.com/projects-esp32-cam/">https://randomnerdtutorials.com/projects-esp32-cam/</a></p>
+<p>基于esp32-cam模块的监控，并自动拍照保存置服务器https://blog.csdn.net/qq_62436070/article/details/134470073</p>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://xuexi1234567890.github.io/jiyou/a9Rc4MjxM/">
+              <h3 class="post-title">
+                下一篇：mind+用户库TM1637数码管使用技巧
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+        
+          <div id="gitalk-container"></div>
+        
+
+        
+      
+
+      <div class="site-footer">
+  <div class="slogan">集邮不是集邮，可能是某种收藏癖好，收集创客相关</div>
+  <div class="social-container">
+    
+      
+        <a href="https://gitee.com/djzrs/jiyou" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+      
+    
+      
+        <a href="https://qm.qq.com/q/MAQoNdBsw6" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+      
+    
+      
+        <a href="https://qm.qq.com/q/MAQoNdBsw6" target="_blank">
+          <i class="fab fa-weibo"></i>
+        </a>
+      
+    
+      
+        <a href="https://qm.qq.com/q/MAQoNdBsw6" target="_blank">
+          <i class="fab fa-zhihu"></i>
+        </a>
+      
+    
+      
+        <a href="https://qm.qq.com/q/MAQoNdBsw6" target="_blank">
+          <i class="fab fa-facebook"></i>
+        </a>
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+联系我：djzrs@qq.com | <a class="rss" href="https://xuexi1234567890.github.io/jiyou/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: 'Ov23li7RTellcpoyYZza',
+        clientSecret: 'cb3475011e5f2c7d60df0168c6d41f07a0a19b0c',
+        repo: 'gitalk',
+        owner: 'xuexi1234567890',
+        admin: ['xuexi1234567890'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

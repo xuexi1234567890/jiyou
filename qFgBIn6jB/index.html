@@ -1,0 +1,509 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>小菜园制作记录 | 集邮</title>
+<meta name="description" content="集邮不是集邮，可能是某种收藏癖好，收集创客相关">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://xuexi1234567890.github.io/jiyou/favicon.ico?v=1727251694138">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://xuexi1234567890.github.io/jiyou/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://xuexi1234567890.github.io/jiyou">
+        <img class="avatar" src="https://xuexi1234567890.github.io/jiyou/images/avatar.png?v=1727251694138" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://xuexi1234567890.github.io/jiyou">
+        <h1 class="site-title">集邮</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="https://xuexi1234567890.github.io/jiyou" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="https://xuexi1234567890.github.io/jiyou/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="https://xuexi1234567890.github.io/jiyou/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="https://xuexi1234567890.github.io/jiyou/qfwytkg2n" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+            <div class="feature-container" style="background-image: url('https://xuexi1234567890.github.io/jiyou/post-images/qFgBIn6jB.jpg')">
+            </div>
+          
+          <h2 class="post-title">小菜园制作记录</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2024-05-21</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/-8J5DyULZ/">
+                    micropython
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/0fsCDGRT3Y/">
+                    数据库
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/p2vHjuXcnY/">
+                    tinywebdb
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/9lKnmK5vwH/">
+                    ESP32
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content" v-pre>
+            <p>做了一个桌面小菜园，主要是想使用micropython实现数据的上传，使用tinywebdb数据库，把数据上传到网络微数据库，然后制作一个网页用来展示数据和植物生长情况。</p>
+<!-- more -->
+<p>照片：</p>
+<figure data-type="image" tabindex="1"><img src="https://xuexi1234567890.github.io/jiyou/post-images/1716254264592-1716254435339-1.jpg" alt="" loading="lazy"></figure>
+<p>程序：</p>
+<pre><code class="language-python">import network
+import time
+from machine import Pin, ADC, Timer, reset
+import urequests as requests
+import dht  # 导入DHT11库
+
+# 初始化模拟引脚
+# 模拟引脚建议使用34,35,36,39
+light = ADC(Pin(35))
+light.atten(ADC.ATTN_11DB)
+
+sd = ADC(Pin(34))
+sd.atten(ADC.ATTN_11DB)
+
+d = dht.DHT11(Pin(15))
+
+# 基础 URL 和请求参数
+BASE_URL = &quot;http://tinywebdb.appinventor.space/api&quot;
+USER = &quot;share&quot;
+SECRET = &quot;everyone&quot;
+
+def get_value(tag):
+    url = f&quot;{BASE_URL}?user={USER}&amp;secret={SECRET}&amp;action=get&amp;tag={tag}&quot;
+    try:
+        response = requests.get(url)
+        if response.status_code == 200:
+            result = response.json()
+            print(&quot;Response from get_value:&quot;, result)  # 调试信息
+            if tag in result:
+                return tag, result[tag]
+            else:
+                print(&quot;Error in get_value response:&quot;, result)  # 错误处理
+        else:
+            print(&quot;HTTP error:&quot;, response.status_code)  # HTTP错误处理
+    except ValueError as ve:
+        print(&quot;ValueError:&quot;, ve)  # 捕获ValueError并打印错误信息
+    except OSError as oe:
+        print(&quot;OSError:&quot;, oe)  # 捕获OSError并打印错误信息
+    except Exception as e:
+        print(&quot;Unexpected error:&quot;, e)  # 捕获其他异常并打印错误信息
+    return None, None
+
+def update_value(tag, value):
+    url = f&quot;{BASE_URL}?user={USER}&amp;secret={SECRET}&amp;action=update&amp;tag={tag}&amp;value={value}&quot;
+    retries = 3
+    for attempt in range(retries):
+        try:
+            response = requests.get(url)
+            if response.status_code == 200:
+                result = response.json()
+                print(&quot;Response from update_value:&quot;, result)  # 调试信息
+                if 'status' in result and result['status'] == 'success':
+                    return True
+                else:
+                    print(&quot;Error in update_value response:&quot;, result)  # 错误处理
+            else:
+                print(&quot;HTTP error:&quot;, response.status_code)  # HTTP错误处理
+        except ValueError as ve:
+            print(&quot;ValueError:&quot;, ve)  # 捕获ValueError并打印错误信息
+        except OSError as oe:
+            print(&quot;OSError:&quot;, oe)  # 捕获OSError并打印错误信息
+        except Exception as e:
+            print(&quot;Unexpected error:&quot;, e)  # 捕获其他异常并打印错误信息
+        time.sleep(2)  # 等待后重试
+    return False
+
+def WIFI_Connect():
+    WIFI_LED = Pin(2, Pin.OUT)  # 初始化WIFI指示灯
+
+    wlan = network.WLAN(network.STA_IF)  # STA模式
+    wlan.active(True)  # 激活接口
+    start_time = time.time()  # 记录时间做超时判断
+
+    if not wlan.isconnected():
+        print('connecting to network...')
+        wlan.connect('waoo2111280', 'waoo2111280')  # 输入WIFI账号密码
+
+        while not wlan.isconnected():
+            # LED闪烁提示
+            WIFI_LED.value(1)
+            time.sleep(0.3)
+            WIFI_LED.value(0)
+            time.sleep(0.3)
+
+            # 超时判断, 15秒没连接成功判定为超时
+            if time.time() - start_time &gt; 15:
+                print('WIFI Connected Timeout!')
+                break
+
+    if wlan.isconnected():
+        # LED点亮
+        WIFI_LED.value(1)
+        # 串口打印信息
+        print('network information:', wlan.ifconfig())
+        return True
+    else:
+        return False
+
+# 数值映射函数
+def map_value(x, in_min, in_max, out_min, out_max):
+    return (x - in_min) * (out_max - out_min) // (in_max - in_min) + out_min
+
+# 重启设备的回调函数
+def restart_callback(timer):
+    print(&quot;重启设备...&quot;)
+    reset()  # 重启设备
+
+# 初始化重启定时器
+restart_timer = Timer(-1)
+restart_timer.init(period=3600000, mode=Timer.PERIODIC, callback=restart_callback)  # 1小时=3600000毫秒
+
+# 执行WIFI连接函数并判断是否已经连接成功
+if WIFI_Connect():
+    while True:
+        '''
+        tag = &quot;cyld&quot;
+        cyld = light.read()
+        cyld = map_value(cyld, 0, 4095, 0, 100)
+        cyld = str(cyld)
+        '''
+        cyld = str(map_value(light.read(), 0, 4095, 0, 100))
+        trsd = str(map_value(sd.read(), 4095, 0, 0, 100))
+        d.measure()  # 先调用测量函数
+        t = str(d.temperature())  # 温度
+        h = str(d.humidity())  # 湿度
+        print(&quot;菜园亮度：&quot; + cyld)
+        print(&quot;土壤湿度：&quot; + trsd)
+        print(&quot;菜园温度：&quot; + t)
+        print(&quot;菜园湿度：&quot; + h)
+        # 存储值
+        if update_value(&quot;cyld&quot;, cyld):
+            print(&quot;cyld存储成功&quot;)
+        else:
+            print(&quot;cyld存储失败&quot;)
+        time.sleep(1)
+        if update_value(&quot;trsd&quot;, trsd):
+            print(&quot;trsd存储成功&quot;)
+        else:
+            print(&quot;trsd存储失败&quot;)
+        time.sleep(1)
+        if update_value(&quot;cysd&quot;, h):
+            print(&quot;cysd存储成功&quot;)
+        else:
+            print(&quot;cysd存储失败&quot;)
+        time.sleep(1)
+        if update_value(&quot;cywd&quot;, t):
+            print(&quot;cywd存储成功&quot;)
+        else:
+            print(&quot;cywd存储失败&quot;)
+        time.sleep(60)
+
+
+</code></pre>
+<p>网页程序：</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;title&gt;实验小菜园&lt;/title&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;!-- 设置字符编码为 UTF-8 --&gt;
+  &lt;style&gt;
+    body {
+      text-align: center;
+      background-color: beige;
+      font-size: xx-large;
+    }
+
+    /* 添加时间显示的样式 */
+    #timeDisplay {
+      color: #0aed8b;
+      /* 这里将文本颜色设置为一种蓝色，您可以根据需要更改颜色值 */
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;div&gt;
+    &lt;h1&gt;实验小菜园&lt;/h1&gt;
+    &lt;p&gt;欢迎来到实验小菜园！&lt;/p&gt;
+    &lt;p&gt;限时项目，2024年5月16号上线，预计存在两周（根据小白菜发芽生长情况）。&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;timeDisplay&quot;&gt;&lt;/div&gt;
+  &lt;div&gt;
+    &lt;h2&gt;环境数据&lt;/h2&gt;
+    &lt;p id=&quot;humidityDisplay&quot;&gt;&lt;/p&gt;
+    &lt;p id=&quot;temperatureDisplay&quot;&gt;&lt;/p&gt;
+    &lt;p id=&quot;lightDisplay&quot;&gt;&lt;/p&gt;
+    &lt;p id=&quot;trsdDisplay&quot;&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;h2&gt;生长情况&lt;/h2&gt;
+    &lt;img src=&quot;https://www.jsdelivr.ren/gh/xuexi1234567890/jiyou@main/post-images/xcy/cy21.jpg&quot; alt=&quot;菜园1&quot;
+      style=&quot;width: 80%; height: auto; display: block; margin: 0 auto;&quot;&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;a href=&quot;https://xuexi1234567890.github.io/jiyou/post-images/xcy/more.html&quot; style=&quot;color: crimson;&quot;&gt;更多图片……&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;script&gt;
+    function fetchData() {
+      // 获取湿度数据
+      fetch('https://tinywebdb.appinventor.space/api?user=share&amp;secret=everyone&amp;action=get&amp;tag=cysd')
+        .then(response =&gt; response.json())
+        .then(data =&gt; {
+          // 更新页面上的湿度数据
+          const humidity = data.cysd || 0; // 默认为0，避免出现 undefined
+          document.getElementById('humidityDisplay').innerText = `♒️菜园湿度：${humidity}%`;
+        })
+        .catch(error =&gt; {
+          console.error('获取湿度数据时发生错误:', error);
+        });
+
+      // 获取温度数据
+      fetch('https://tinywebdb.appinventor.space/api?user=share&amp;secret=everyone&amp;action=get&amp;tag=cywd')
+        .then(response =&gt; response.json())
+        .then(data =&gt; {
+          // 更新页面上的温度数据
+          const temperature = data.cywd || 0; // 默认为0，避免出现 undefined
+          document.getElementById('temperatureDisplay').innerText = `🌡️菜园温度：${temperature}℃`;
+        })
+        .catch(error =&gt; {
+          console.error('获取温度数据时发生错误:', error);
+        });
+
+      // 获取温度数据
+      fetch('https://tinywebdb.appinventor.space/api?user=share&amp;secret=everyone&amp;action=get&amp;tag=cyld')
+        .then(response =&gt; response.json())
+        .then(data =&gt; {
+          // 更新页面上的温度数据
+          const light = data.cyld || 0; // 默认为0，避免出现 undefined
+          document.getElementById('lightDisplay').innerText = `☀️菜园光照：${light}`;
+        })
+        .catch(error =&gt; {
+          console.error('获取光照数据时发生错误:', error);
+        });
+      // 获取土壤湿度数据
+      fetch('https://tinywebdb.appinventor.space/api?user=share&amp;secret=everyone&amp;action=get&amp;tag=trsd')
+        .then(response =&gt; response.json())
+        .then(data =&gt; {
+          // 更新页面上的温度数据
+          const trsd = data.trsd || 0; // 默认为0，避免出现 undefined
+          document.getElementById('trsdDisplay').innerText = `🪴土壤湿度：${trsd}`;
+        })
+        .catch(error =&gt; {
+          console.error('获取土壤湿度数据时发生错误:', error);
+        });
+    }
+
+    function updateTime() {
+      const now = new Date();
+      const timeDisplay = document.getElementById('timeDisplay');
+      timeDisplay.textContent = `当前时间：${now.toLocaleTimeString()}`;
+    }
+
+    // 每隔1秒更新时间
+    setInterval(updateTime, 1000);
+
+    // 每隔60秒更新数据
+    setInterval(fetchData, 5000);
+
+    // 初始加载数据
+    fetchData();
+    // 初始加载时间
+    updateTime();
+  &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<p><strong>体验项目：</strong><a href="https://xuexi1234567890.github.io/jiyou/post-images/xcy/">https://xuexi1234567890.github.io/jiyou/post-images/xcy/</a></p>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://xuexi1234567890.github.io/jiyou/tmaeG9IDc/">
+              <h3 class="post-title">
+                下一篇：ESP32cam通过HTTP上传图片
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+        
+          <div id="gitalk-container"></div>
+        
+
+        
+      
+
+      <div class="site-footer">
+  <div class="slogan">集邮不是集邮，可能是某种收藏癖好，收集创客相关</div>
+  <div class="social-container">
+    
+      
+        <a href="https://gitee.com/djzrs/jiyou" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+      
+    
+      
+        <a href="https://qm.qq.com/q/MAQoNdBsw6" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+      
+    
+      
+        <a href="https://qm.qq.com/q/MAQoNdBsw6" target="_blank">
+          <i class="fab fa-weibo"></i>
+        </a>
+      
+    
+      
+        <a href="https://qm.qq.com/q/MAQoNdBsw6" target="_blank">
+          <i class="fab fa-zhihu"></i>
+        </a>
+      
+    
+      
+        <a href="https://qm.qq.com/q/MAQoNdBsw6" target="_blank">
+          <i class="fab fa-facebook"></i>
+        </a>
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+联系我：djzrs@qq.com | <a class="rss" href="https://xuexi1234567890.github.io/jiyou/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: 'Ov23li7RTellcpoyYZza',
+        clientSecret: 'cb3475011e5f2c7d60df0168c6d41f07a0a19b0c',
+        repo: 'gitalk',
+        owner: 'xuexi1234567890',
+        admin: ['xuexi1234567890'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

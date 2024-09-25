@@ -1,0 +1,314 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>使用platformio编译microblocks固件 | 集邮</title>
+<meta name="description" content="集邮不是集邮，可能是某种收藏癖好，收集创客相关">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://xuexi1234567890.github.io/jiyou/favicon.ico?v=1727251694138">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://xuexi1234567890.github.io/jiyou/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://xuexi1234567890.github.io/jiyou">
+        <img class="avatar" src="https://xuexi1234567890.github.io/jiyou/images/avatar.png?v=1727251694138" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://xuexi1234567890.github.io/jiyou">
+        <h1 class="site-title">集邮</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="https://xuexi1234567890.github.io/jiyou" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="https://xuexi1234567890.github.io/jiyou/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="https://xuexi1234567890.github.io/jiyou/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="https://xuexi1234567890.github.io/jiyou/qfwytkg2n" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+            <div class="feature-container" style="background-image: url('https://xuexi1234567890.github.io/jiyou/post-images/e8Ji4GX3-.png')">
+            </div>
+          
+          <h2 class="post-title">使用platformio编译microblocks固件</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2024-03-03</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/UF1pFxyuT/">
+                    platformio
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/7JsS7JlV-Y/">
+                    vscode
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/UaQ0oqaWvp/">
+                    github
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/RYaa0h1hAd/">
+                    固件
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/3MLFZkLZS/">
+                    microblocks
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content" v-pre>
+            <p>使用platformio编译microblocks固件</p>
+<p>以ESP32-C3为例，其他板子参考种瓜博客：<a href="https://wwj718.github.io/post/%E7%BC%96%E7%A8%8B/microblocks-dev-notes/">https://wwj718.github.io/post/%E7%BC%96%E7%A8%8B/microblocks-dev-notes/</a></p>
+<p>全文基于Windows系统</p>
+<!-- more -->
+<h3 id="安装vscode">安装vscode</h3>
+<p>下载：<a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></p>
+<p>省略……</p>
+<h3 id="安装python">安装Python</h3>
+<p>下载：<a href="https://www.python.org/">https://www.python.org/</a></p>
+<p>省略……</p>
+<h3 id="安装git">安装git</h3>
+<p>下载：<a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></p>
+<p>省略……</p>
+<h3 id="安装platformio">安装platformio</h3>
+<p>安装前请测试你的电脑能否正常打开<a href="github.com">github</a></p>
+<p>如果不能请放弃，或者想办法让你的电脑可以接入国际互联网</p>
+<figure data-type="image" tabindex="1"><img src="https://xuexi1234567890.github.io/jiyou/post-images/image-20240303183521384.png" alt="image-20240303183521384" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://xuexi1234567890.github.io/jiyou/post-images/7b30331c8b78497aa828547fa9bd58cf.png" alt="在这里插入图片描述" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="https://xuexi1234567890.github.io/jiyou/post-images/7d4df4e9423349aa90064afd6dfce2b4.png" alt="在这里插入图片描述" loading="lazy"></figure>
+<p>下载速度可能会非常慢，能打开github也有可能下载失败。耐心等待，失败请多试几次。</p>
+<p>安装成功之后侧边栏会出现pio的蚂蚁logo</p>
+<figure data-type="image" tabindex="4"><img src="https://xuexi1234567890.github.io/jiyou/post-images/image-20240303184138702.png" alt="image-20240303184138702" loading="lazy"></figure>
+<p>点击蚂蚁logo，再点击open，出现pio home页面</p>
+<figure data-type="image" tabindex="5"><img src="https://xuexi1234567890.github.io/jiyou/post-images/image-20240303184349816.png" alt="image-20240303184349816" loading="lazy"></figure>
+<p>如果右下角出现下载进度条，请等待进度条完成。</p>
+<h3 id="下载microblocks源码">下载microblocks源码</h3>
+<p>代码仓库：<a href="https://github.com/MicroBlocksCN/smallvm">https://github.com/MicroBlocksCN/smallvm</a></p>
+<p>如果下载不了可以使用<a href="https://greasyfork.org/zh-CN/scripts/412245-github-%E5%A2%9E%E5%BC%BA-%E9%AB%98%E9%80%9F%E4%B8%8B%E8%BD%BD">加速插件</a></p>
+<figure data-type="image" tabindex="6"><img src="https://xuexi1234567890.github.io/jiyou/post-images/image-20240303184919343.png" alt="image-20240303184919343" loading="lazy"></figure>
+<h3 id="解压源码并使用vscode打开">解压源码并使用vscode打开</h3>
+<figure data-type="image" tabindex="7"><img src="https://xuexi1234567890.github.io/jiyou/post-images/image-20240303185047454.png" alt="image-20240303185047454" loading="lazy"></figure>
+<figure data-type="image" tabindex="8"><img src="https://xuexi1234567890.github.io/jiyou/post-images/image-20240303185143165.png" alt="image-20240303185143165" loading="lazy"></figure>
+<figure data-type="image" tabindex="9"><img src="https://xuexi1234567890.github.io/jiyou/post-images/image-20240303185334158.png" alt="image-20240303185334158" loading="lazy"></figure>
+<figure data-type="image" tabindex="10"><img src="https://xuexi1234567890.github.io/jiyou/post-images/image-20240303185431238.png" alt="image-20240303185431238" loading="lazy"></figure>
+<figure data-type="image" tabindex="11"><img src="https://xuexi1234567890.github.io/jiyou/post-images/image-20240303185533509.png" alt="image-20240303185533509" loading="lazy"></figure>
+<h3 id="编译固件">编译固件</h3>
+<p>参考视频：<a href="https://www.bilibili.com/video/BV1Pg4y1y7rV/?share_source=copy_web&amp;vd_source=a5afd85b4d01fe66bd0a199a87982c8f">自己编译 MicroBlocks 固件, 不求人</a></p>
+<figure data-type="image" tabindex="12"><img src="https://xuexi1234567890.github.io/jiyou/post-images/image-20240303185711033.png" alt="image-20240303185711033" loading="lazy"></figure>
+<p>打开命令终端</p>
+<figure data-type="image" tabindex="13"><img src="https://xuexi1234567890.github.io/jiyou/post-images/image-20240303190420219.png" alt="image-20240303190420219" loading="lazy"></figure>
+<p>输入命令：pio run -e esp32-c3-airm2m，pio run -e 板子名称</p>
+<p>输完按下回车开始编译</p>
+<figure data-type="image" tabindex="14"><img src="https://xuexi1234567890.github.io/jiyou/post-images/image-20240303190546297.png" alt="image-20240303190546297" loading="lazy"></figure>
+<p>第一次编译可能会非常慢，因为需要下载非常非常多的东西。</p>
+<h4 id="编译并下载到板子">编译并下载到板子</h4>
+<p>只需要修改命令即可：pio run -e esp32-c3-airm2m -t upload</p>
+<p>加上-t upload</p>
+<h3 id="分享固件">分享固件</h3>
+<p>如果需要分享固件给别人使用</p>
+<p>修改编译命令再次编译：pio run -e esp32-c3-airm2m -v -t upload</p>
+<p>终端编译信息往上翻</p>
+<figure data-type="image" tabindex="15"><img src="https://xuexi1234567890.github.io/jiyou/post-images/image-20240303191520764.png" alt="image-20240303191520764" loading="lazy"></figure>
+<figure data-type="image" tabindex="16"><img src="https://xuexi1234567890.github.io/jiyou/post-images/image-20240303191639039.png" alt="image-20240303191639039" loading="lazy"></figure>
+<pre><code>&quot;C:\Users\qq103\.platformio\penv\Scripts\python.exe&quot; &quot;C:\Users\qq103\.platformio\packages\tool-esptoolpy\esptool.py&quot; --chip esp32c3 --port &quot;COM9&quot; --baud 460800 --before default_reset --after hard_reset write_flash -z --flash_mode dio --flash_freq 80m --flash_size 4MB 0x0000 D:\Documents\smallvm-devCN\.pio\build\esp32-c3-airm2m\bootloader.bin 0x8000 D:\Documents\smallvm-devCN\.pio\build\esp32-c3-airm2m\partitions.bin 0xe000 C:\Users\qq103\.platformio\packages\framework-arduinoespressif32\tools\partitions\boot_app0.bin 0x10000 .pio\build\esp32-c3-airm2m\firmware.bin
+</code></pre>
+<figure data-type="image" tabindex="17"><img src="https://xuexi1234567890.github.io/jiyou/post-images/image-20240303191812675.png" alt="image-20240303191812675" loading="lazy"></figure>
+<p>可以看到固件的名称，位置和烧写地址</p>
+<p>这个时候就可以使用乐鑫官方的<a href="https://www.espressif.com.cn/zh-hans/support/download/other-tools">flash_download</a>工具烧写固件了</p>
+<figure data-type="image" tabindex="18"><img src="https://xuexi1234567890.github.io/jiyou/post-images/image-20240303192146975.png" alt="image-20240303192146975" loading="lazy"></figure>
+<figure data-type="image" tabindex="19"><img src="https://xuexi1234567890.github.io/jiyou/post-images/image-20240303192218427.png" alt="image-20240303192218427" loading="lazy"></figure>
+<figure data-type="image" tabindex="20"><img src="https://xuexi1234567890.github.io/jiyou/post-images/image-20240303192305422.png" alt="image-20240303192305422" loading="lazy"></figure>
+<p>把这四个bin文件打包发给别人让他按照这个四个地址烧写即可。</p>
+<p>也可以把四个bin文件合并成一个文件进行烧写</p>
+<p>把boot_app0.bin复制到bootloader.bin，firmware.bin，partitions.bin所在的文件夹，方便后面操作</p>
+<figure data-type="image" tabindex="21"><img src="https://xuexi1234567890.github.io/jiyou/post-images/image-20240303193059151.png" alt="image-20240303193059151" loading="lazy"></figure>
+<h4 id="安装esptools">安装ESPtools</h4>
+<pre><code>pip install esptool
+</code></pre>
+<figure data-type="image" tabindex="22"><img src="https://xuexi1234567890.github.io/jiyou/post-images/image-20240303180541306.png" alt="image-20240303180541306" loading="lazy"></figure>
+<h4 id="运行合并命令">运行合并命令</h4>
+<pre><code>esptool --chip esp32c3 merge_bin -o merged-flash.bin --flash_mode dio --flash_size 4MB 0x0000 .pio\build\esp32-c3-airm2m\bootloader.bin 0x8000 .pio\build\esp32-c3-airm2m\partitions.bin 0xe000 .pio\build\esp32-c3-airm2m\boot_app0.bin 0x10000 .pio\build\esp32-c3-airm2m\firmware.bin
+</code></pre>
+<figure data-type="image" tabindex="23"><img src="https://xuexi1234567890.github.io/jiyou/post-images/image-20240303181800178.png" alt="image-20240303181800178" loading="lazy"></figure>
+<p>合并后的固件烧写地址：0x0</p>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://xuexi1234567890.github.io/jiyou/aJ-k1MPgT/">
+              <h3 class="post-title">
+                下一篇：安卓手机使用APPinventor制作基于MQTT通信客户端
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+        
+          <div id="gitalk-container"></div>
+        
+
+        
+      
+
+      <div class="site-footer">
+  <div class="slogan">集邮不是集邮，可能是某种收藏癖好，收集创客相关</div>
+  <div class="social-container">
+    
+      
+        <a href="https://gitee.com/djzrs/jiyou" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+      
+    
+      
+        <a href="https://qm.qq.com/q/MAQoNdBsw6" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+      
+    
+      
+        <a href="https://qm.qq.com/q/MAQoNdBsw6" target="_blank">
+          <i class="fab fa-weibo"></i>
+        </a>
+      
+    
+      
+        <a href="https://qm.qq.com/q/MAQoNdBsw6" target="_blank">
+          <i class="fab fa-zhihu"></i>
+        </a>
+      
+    
+      
+        <a href="https://qm.qq.com/q/MAQoNdBsw6" target="_blank">
+          <i class="fab fa-facebook"></i>
+        </a>
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+联系我：djzrs@qq.com | <a class="rss" href="https://xuexi1234567890.github.io/jiyou/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: 'Ov23li7RTellcpoyYZza',
+        clientSecret: 'cb3475011e5f2c7d60df0168c6d41f07a0a19b0c',
+        repo: 'gitalk',
+        owner: 'xuexi1234567890',
+        admin: ['xuexi1234567890'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

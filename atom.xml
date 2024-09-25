@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://xuexi1234567890.github.io/jiyou</id>
+    <title>集邮</title>
+    <updated>2024-09-25T08:35:51.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://xuexi1234567890.github.io/jiyou"/>
+    <link rel="self" href="https://xuexi1234567890.github.io/jiyou/atom.xml"/>
+    <subtitle>集邮不是集邮，可能是某种收藏癖好，收集创客相关</subtitle>
+    <logo>https://xuexi1234567890.github.io/jiyou/images/avatar.png</logo>
+    <icon>https://xuexi1234567890.github.io/jiyou/favicon.ico</icon>
+    <rights>All rights reserved 2024, 集邮</rights>
+    <entry>
+        <title type="html"><![CDATA[学而思掌机资料汇总]]></title>
+        <id>https://xuexi1234567890.github.io/jiyou/4_tr1bwch/</id>
+        <link href="https://xuexi1234567890.github.io/jiyou/4_tr1bwch/">
+        </link>
+        <updated>2024-09-23T12:00:22.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[学而思掌机折腾记录]]></title>
+        <id>https://xuexi1234567890.github.io/jiyou/BznJoSD7g/</id>
+        <link href="https://xuexi1234567890.github.io/jiyou/BznJoSD7g/">
+        </link>
+        <updated>2024-09-22T03:46:46.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[小菜园制作记录]]></title>
+        <id>https://xuexi1234567890.github.io/jiyou/qFgBIn6jB/</id>
+        <link href="https://xuexi1234567890.github.io/jiyou/qFgBIn6jB/">
+        </link>
+        <updated>2024-05-21T01:06:35.000Z</updated>
+        <summary type="html"><![CDATA[<p>做了一个桌面小菜园，主要是想使用micropython实现数据的上传，使用tinywebdb数据库，把数据上传到网络微数据库，然后制作一个网页用来展示数据和植物生长情况。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>做了一个桌面小菜园，主要是想使用micropython实现数据的上传，使用tinywebdb数据库，把数据上传到网络微数据库，然后制作一个网页用来展示数据和植物生长情况。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[ESP32cam通过HTTP上传图片]]></title>
+        <id>https://xuexi1234567890.github.io/jiyou/tmaeG9IDc/</id>
+        <link href="https://xuexi1234567890.github.io/jiyou/tmaeG9IDc/">
+        </link>
+        <updated>2024-03-28T10:22:11.000Z</updated>
+        <summary type="html"><![CDATA[<p>不知道为啥我的下载底座放久了竟然坏了真神奇，折腾了两天反复的找代码让GPT修改都不行，最后找到了一个可以的很兴奋。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>不知道为啥我的下载底座放久了竟然坏了真神奇，折腾了两天反复的找代码让GPT修改都不行，最后找到了一个可以的很兴奋。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[ESP32CAM项目资料收集]]></title>
+        <id>https://xuexi1234567890.github.io/jiyou/oyVSS0oy8/</id>
+        <link href="https://xuexi1234567890.github.io/jiyou/oyVSS0oy8/">
+        </link>
+        <updated>2024-03-27T09:36:52.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[mind+用户库TM1637数码管使用技巧]]></title>
+        <id>https://xuexi1234567890.github.io/jiyou/a9Rc4MjxM/</id>
+        <link href="https://xuexi1234567890.github.io/jiyou/a9Rc4MjxM/">
+        </link>
+        <updated>2024-03-27T08:45:36.000Z</updated>
+        <summary type="html"><![CDATA[<p>如果你也跟我一样被这玩意折磨过，那么恭喜你，现在可以脱离苦海了。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>如果你也跟我一样被这玩意折磨过，那么恭喜你，现在可以脱离苦海了。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[测试MD插入视频]]></title>
+        <id>https://xuexi1234567890.github.io/jiyou/_QLCfS0nE/</id>
+        <link href="https://xuexi1234567890.github.io/jiyou/_QLCfS0nE/">
+        </link>
+        <updated>2024-03-24T11:11:10.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[编码电机小车走直线调试记录]]></title>
+        <id>https://xuexi1234567890.github.io/jiyou/mrHEj6sbS/</id>
+        <link href="https://xuexi1234567890.github.io/jiyou/mrHEj6sbS/">
+        </link>
+        <updated>2024-03-15T10:32:38.000Z</updated>
+        <summary type="html"><![CDATA[<p>编码电机小车走直线调试记录</p>
+<p>去年B站学了一下PID循线/巡线？，没有调出来，教程讲的很清楚，我感觉也听明白了，同款传感器也买了就是调不出来，然后放弃了。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>编码电机小车走直线调试记录</p>
+<p>去年B站学了一下PID循线/巡线？，没有调出来，教程讲的很清楚，我感觉也听明白了，同款传感器也买了就是调不出来，然后放弃了。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[尚视界1.44寸屏microblocks编译配置]]></title>
+        <id>https://xuexi1234567890.github.io/jiyou/tAT_jwKDq/</id>
+        <link href="https://xuexi1234567890.github.io/jiyou/tAT_jwKDq/">
+        </link>
+        <updated>2024-03-13T11:45:46.000Z</updated>
+        <summary type="html"><![CDATA[<p>乌龙<br>
+我一看8块钱还包邮还带字库买一块回来试试，今天问了店铺客服字库怎么用客服说不带字库呀，原来是配图错了他家美工把图配错了，然后他就送了我一块带字库的串口屏，本来我还想学着韩老师来个退款不退货呢</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>乌龙<br>
+我一看8块钱还包邮还带字库买一块回来试试，今天问了店铺客服字库怎么用客服说不带字库呀，原来是配图错了他家美工把图配错了，然后他就送了我一块带字库的串口屏，本来我还想学着韩老师来个退款不退货呢</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[使用platformio编译microblocks固件]]></title>
+        <id>https://xuexi1234567890.github.io/jiyou/e8Ji4GX3-/</id>
+        <link href="https://xuexi1234567890.github.io/jiyou/e8Ji4GX3-/">
+        </link>
+        <updated>2024-03-03T11:32:35.000Z</updated>
+        <summary type="html"><![CDATA[<p>使用platformio编译microblocks固件</p>
+<p>以ESP32-C3为例，其他板子参考种瓜博客：<a href="https://wwj718.github.io/post/%E7%BC%96%E7%A8%8B/microblocks-dev-notes/">https://wwj718.github.io/post/%E7%BC%96%E7%A8%8B/microblocks-dev-notes/</a></p>
+<p>全文基于Windows系统</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>使用platformio编译microblocks固件</p>
+<p>以ESP32-C3为例，其他板子参考种瓜博客：<a href="https://wwj718.github.io/post/%E7%BC%96%E7%A8%8B/microblocks-dev-notes/">https://wwj718.github.io/post/%E7%BC%96%E7%A8%8B/microblocks-dev-notes/</a></p>
+<p>全文基于Windows系统</p>
+]]></content>
+    </entry>
+</feed>

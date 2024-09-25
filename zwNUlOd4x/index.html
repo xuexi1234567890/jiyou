@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>APP inventor调用百度文字识别 | 集邮</title>
+<meta name="description" content="集邮不是集邮，可能是某种收藏癖好，收集创客相关">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://xuexi1234567890.github.io/jiyou/favicon.ico?v=1727251694138">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://xuexi1234567890.github.io/jiyou/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://xuexi1234567890.github.io/jiyou">
+        <img class="avatar" src="https://xuexi1234567890.github.io/jiyou/images/avatar.png?v=1727251694138" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://xuexi1234567890.github.io/jiyou">
+        <h1 class="site-title">集邮</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="https://xuexi1234567890.github.io/jiyou" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="https://xuexi1234567890.github.io/jiyou/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="https://xuexi1234567890.github.io/jiyou/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="https://xuexi1234567890.github.io/jiyou/qfwytkg2n" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">APP inventor调用百度文字识别</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2024-01-03</span>
+            
+          </div>
+          <div class="post-content" v-pre>
+            <p>百度OCR页面https://console.bce.baidu.com/ai/#/ai/ocr/overview/index<br>
+<img src="https://xuexi1234567890.github.io/jiyou/post-images/1704277955185.png" alt="" loading="lazy"><br>
+未领取免费额度需要先领取<br>
+创建应用<br>
+<img src="https://xuexi1234567890.github.io/jiyou/post-images/1704278064361.png" alt="" loading="lazy"><br>
+<img src="https://xuexi1234567890.github.io/jiyou/post-images/1704278282090.png" alt="" loading="lazy"><br>
+<img src="https://xuexi1234567890.github.io/jiyou/post-images/1704278289147.png" alt="" loading="lazy"><br>
+应用列表https://console.bce.baidu.com/ai/#/ai/ocr/app/list<br>
+<img src="https://xuexi1234567890.github.io/jiyou/post-images/1704278645767.png" alt="" loading="lazy"><br>
+API文档https://ai.baidu.com/ai-doc/OCR/Ck3h7y2ia<br>
+使用百度在线调试工具获取AccessToken：https://console.bce.baidu.com/tools/#/api?product=AI&amp;project=%E6%96%87%E5%AD%97%E8%AF%86%E5%88%AB&amp;parent=%E9%89%B4%E6%9D%83%E8%AE%A4%E8%AF%81%E6%9C%BA%E5%88%B6&amp;api=oauth%2F2.0%2Ftoken&amp;method=post<br>
+<img src="https://xuexi1234567890.github.io/jiyou/post-images/1704279304035.png" alt="" loading="lazy"></p>
+<p>手写识别文档：https://ai.baidu.com/ai-doc/OCR/hk3h7y2qq</p>
+<p>金从军老师教程<br>
+【细说App Inventor【81】Web客户端_1】 https://www.bilibili.com/video/BV1Ay4y1j7Rp/?share_source=copy_web&amp;vd_source=a5afd85b4d01fe66bd0a199a87982c8f<br>
+【细说Appinventor【82】Web客户端_2】 https://www.bilibili.com/video/BV1Lw41197Pj/?share_source=copy_web&amp;vd_source=a5afd85b4d01fe66bd0a199a87982c8f<br>
+【细说Appinventor【83】Web客户端_3】 https://www.bilibili.com/video/BV1654y1E78r/?share_source=copy_web&amp;vd_source=a5afd85b4d01fe66bd0a199a87982c8f<br>
+【细说Appinventor【84】Web客户端_4】 https://www.bilibili.com/video/BV1ib4y167pJ/?share_source=copy_web&amp;vd_source=a5afd85b4d01fe66bd0a199a87982c8f</p>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://xuexi1234567890.github.io/jiyou/VIGu_h6Av/">
+              <h3 class="post-title">
+                下一篇：网页显示温湿度
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+        
+          <div id="gitalk-container"></div>
+        
+
+        
+      
+
+      <div class="site-footer">
+  <div class="slogan">集邮不是集邮，可能是某种收藏癖好，收集创客相关</div>
+  <div class="social-container">
+    
+      
+        <a href="https://gitee.com/djzrs/jiyou" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+      
+    
+      
+        <a href="https://qm.qq.com/q/MAQoNdBsw6" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+      
+    
+      
+        <a href="https://qm.qq.com/q/MAQoNdBsw6" target="_blank">
+          <i class="fab fa-weibo"></i>
+        </a>
+      
+    
+      
+        <a href="https://qm.qq.com/q/MAQoNdBsw6" target="_blank">
+          <i class="fab fa-zhihu"></i>
+        </a>
+      
+    
+      
+        <a href="https://qm.qq.com/q/MAQoNdBsw6" target="_blank">
+          <i class="fab fa-facebook"></i>
+        </a>
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+联系我：djzrs@qq.com | <a class="rss" href="https://xuexi1234567890.github.io/jiyou/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: 'Ov23li7RTellcpoyYZza',
+        clientSecret: 'cb3475011e5f2c7d60df0168c6d41f07a0a19b0c',
+        repo: 'gitalk',
+        owner: 'xuexi1234567890',
+        admin: ['xuexi1234567890'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

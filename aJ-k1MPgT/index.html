@@ -1,0 +1,348 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>安卓手机使用APPinventor制作基于MQTT通信客户端 | 集邮</title>
+<meta name="description" content="集邮不是集邮，可能是某种收藏癖好，收集创客相关">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://xuexi1234567890.github.io/jiyou/favicon.ico?v=1727251694138">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://xuexi1234567890.github.io/jiyou/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://xuexi1234567890.github.io/jiyou">
+        <img class="avatar" src="https://xuexi1234567890.github.io/jiyou/images/avatar.png?v=1727251694138" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://xuexi1234567890.github.io/jiyou">
+        <h1 class="site-title">集邮</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="https://xuexi1234567890.github.io/jiyou" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="https://xuexi1234567890.github.io/jiyou/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="https://xuexi1234567890.github.io/jiyou/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="https://xuexi1234567890.github.io/jiyou/qfwytkg2n" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+            <div class="feature-container" style="background-image: url('https://xuexi1234567890.github.io/jiyou/post-images/aJ-k1MPgT.jpg')">
+            </div>
+          
+          <h2 class="post-title">安卓手机使用APPinventor制作基于MQTT通信客户端</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2024-02-20</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/_9orJ8Dzy/">
+                    APPinventor
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/uDHGDCLzA8/">
+                    MQTT
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/RnBt3PlCfT/">
+                    安卓
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/3Wfm52CQtX/">
+                    通信
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/dxwo7VNnN_/">
+                    物联网
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/K49TnVpxaE/">
+                    iot
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/s3kGUZrEOe/">
+                    安卓手机开发
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/83IxVBDkiB/">
+                    客户端制作
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/yNm3OZqQZd/">
+                    APP 开发教程
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/h71KPMBk9U/">
+                    安卓应用
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/SHMC4NAwc4/">
+                    MQTT 客户端
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/eLzcbeaAxO/">
+                    技术分享
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/mqbihxIEGo/">
+                    APPinventor 技巧
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content" v-pre>
+            <p>以下是根据《安卓手机使用 APPinventor 制作基于 MQTT 通信客户端》生成的多个不同表述的标题：</p>
+<ol>
+<li><em><strong>*APP inventor 打造 MQTT 通信客户端*</strong></em>：安卓手机应用教程</li>
+<li>基于 MQTT 通信的安卓手机 APP 制作：APPinventor 应用</li>
+<li><em><strong>*安卓手机 APP 开发*</strong></em>：使用 APPinventor 实现 MQTT 通信客户端</li>
+<li>MQTT 通信客户端的安卓手机制作方法：APPinventor 攻略</li>
+<li>利用 APPinventor 为安卓手机创建 MQTT 通信客户端</li>
+<li><em><strong>*APPinventor 实战*</strong></em>：安卓手机 MQTT 通信客户端开发</li>
+<li>安卓手机上的 MQTT 通信客户端制作：APPinventor 技巧分享</li>
+<li>如何使用 APPinventor 制作安卓手机 MQTT 通信客户端</li>
+<li>用 APPinventor 开发安卓手机 MQTT 通信客户端的步骤</li>
+<li>APPinventor 助你轻松制作安卓手机 MQTT 通信客户端</li>
+</ol>
+<p>这些标题都围绕着文章的主要内容，即使用 APPinventor 在安卓手机上制作 MQTT 通信客户端，通过不同的表述方式和重点突出，希望能够吸引读者的注意力，同时也有助于提高文章在搜索结果中的可见性。你可以根据需要选择合适的标题，或者根据实际情况进行适当修改和调整。</p>
+<!-- more -->
+<h3 id="打开网址httpscodeappinventormitedulocalezh_cn">打开网址<a href="https://code.appinventor.mit.edu/?locale=zh_CN">https://code.appinventor.mit.edu/?locale=zh_CN</a></h3>
+<p>如果打开不网址，可以使用<a href="http://ai2.17coding.net/?locale=zh_CN">http://ai2.17coding.net/?locale=zh_CN</a>，这个网址无法保留你的创作，一旦网页关闭你的创作立刻消失，记得频繁的下载到本地。</p>
+<p>也可以使用离线版，下载地址：<a href="https://roadlabs.flowus.cn/roadlabs/share/ed19a014-1932-4b40-8b4f-d0daf1a9cc2d">https://roadlabs.flowus.cn/roadlabs/share/ed19a014-1932-4b40-8b4f-d0daf1a9cc2d</a></p>
+<h3 id="下载mqtt插件">下载MQTT插件</h3>
+<p><a href="https://www.123pan.com/s/A6oDVv-WX5Wd.html">https://www.123pan.com/s/A6oDVv-WX5Wd.html</a></p>
+<h3 id="新建项目添加插件">新建项目，添加插件</h3>
+<figure data-type="image" tabindex="1"><img src="https://xuexi1234567890.github.io/jiyou/post-images/20240220174629.png" alt="微信截图_20240220174629" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://xuexi1234567890.github.io/jiyou/post-images/20240220174757.png" alt="微信截图_20240220174757" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="https://xuexi1234567890.github.io/jiyou/post-images/20240220174830.png" alt="微信截图_20240220174830" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://xuexi1234567890.github.io/jiyou/post-images/20240220174854.png" alt="微信截图_20240220174854" loading="lazy"></figure>
+<figure data-type="image" tabindex="5"><img src="https://xuexi1234567890.github.io/jiyou/post-images/20240220174930.png" alt="微信截图_20240220174930" loading="lazy"></figure>
+<figure data-type="image" tabindex="6"><img src="https://xuexi1234567890.github.io/jiyou/post-images/20240220174953.png" alt="微信截图_20240220174953" loading="lazy"></figure>
+<figure data-type="image" tabindex="7"><img src="https://xuexi1234567890.github.io/jiyou/post-images/20240220175010.png" alt="微信截图_20240220175010" loading="lazy"></figure>
+<figure data-type="image" tabindex="8"><img src="https://xuexi1234567890.github.io/jiyou/post-images/20240220175248.png" alt="微信截图_20240220175248" loading="lazy"></figure>
+<figure data-type="image" tabindex="9"><img src="https://xuexi1234567890.github.io/jiyou/post-images/20240220175342-1708425304502-10.png" alt="微信截图_20240220175342" loading="lazy"></figure>
+<h3 id="界面设计">界面设计</h3>
+<p>这里搞简单一点，明白怎么回事了就行，明白之后，前面下载的插件文件夹里面有一个比较完整的例子可以看下那个</p>
+<p>添加一个标签用于显示接收到的消息，添加一个按键点击一下发送一条消息</p>
+<figure data-type="image" tabindex="10"><img src="https://xuexi1234567890.github.io/jiyou/post-images/image-20240220191048638.png" alt="image-20240220191048638" loading="lazy"></figure>
+<figure data-type="image" tabindex="11"><img src="https://xuexi1234567890.github.io/jiyou/post-images/image-20240220191106650.png" alt="image-20240220191106650" loading="lazy"></figure>
+<p>修改一下按钮显示的文字和名称</p>
+<figure data-type="image" tabindex="12"><img src="https://xuexi1234567890.github.io/jiyou/post-images/image-20240220191238196.png" alt="image-20240220191238196" loading="lazy"></figure>
+<figure data-type="image" tabindex="13"><img src="https://xuexi1234567890.github.io/jiyou/post-images/image-20240220191336285.png" alt="image-20240220191336285" loading="lazy"></figure>
+<figure data-type="image" tabindex="14"><img src="https://xuexi1234567890.github.io/jiyou/post-images/image-20240220191405491.png" alt="image-20240220191405491" loading="lazy"></figure>
+<h3 id="开始编写程序">开始编写程序</h3>
+<figure data-type="image" tabindex="15"><img src="https://xuexi1234567890.github.io/jiyou/post-images/image-20240220191442713.png" alt="image-20240220191442713" loading="lazy"></figure>
+<p><strong>设置服务器信息</strong></p>
+<figure data-type="image" tabindex="16"><img src="https://xuexi1234567890.github.io/jiyou/post-images/image-20240220191904985.png" alt="image-20240220191904985" loading="lazy"></figure>
+<p><strong>使用按钮的颜色示意服务器连接状态</strong></p>
+<figure data-type="image" tabindex="17"><img src="https://xuexi1234567890.github.io/jiyou/post-images/image-20240220192506115.png" alt="image-20240220192506115" loading="lazy"></figure>
+<p><strong>接收显示到标签</strong></p>
+<figure data-type="image" tabindex="18"><img src="https://xuexi1234567890.github.io/jiyou/post-images/image-20240220192602141.png" alt="image-20240220192602141" loading="lazy"></figure>
+<p><strong>发送消息</strong></p>
+<figure data-type="image" tabindex="19"><img src="https://xuexi1234567890.github.io/jiyou/post-images/image-20240220192754291.png" alt="image-20240220192754291" loading="lazy"></figure>
+<p><strong>测试</strong><br>
+<img src="https://xuexi1234567890.github.io/jiyou/post-images/image-20240220192927360.png" alt="image-20240220192927360" loading="lazy"></p>
+<p>完善视频版：【试用新发现的APPinventor的MQTT插件记录】 <a href="https://www.bilibili.com/video/BV15h4y1t75v/?share_source=copy_web&amp;vd_source=a5afd85b4d01fe66bd0a199a87982c8f">https://www.bilibili.com/video/BV15h4y1t75v/?share_source=copy_web&amp;vd_source=a5afd85b4d01fe66bd0a199a87982c8f</a></p>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://xuexi1234567890.github.io/jiyou/0_Sn0WBXJ/">
+              <h3 class="post-title">
+                下一篇：一次失败的尝试：995舵机四足机器人
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+        
+          <div id="gitalk-container"></div>
+        
+
+        
+      
+
+      <div class="site-footer">
+  <div class="slogan">集邮不是集邮，可能是某种收藏癖好，收集创客相关</div>
+  <div class="social-container">
+    
+      
+        <a href="https://gitee.com/djzrs/jiyou" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+      
+    
+      
+        <a href="https://qm.qq.com/q/MAQoNdBsw6" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+      
+    
+      
+        <a href="https://qm.qq.com/q/MAQoNdBsw6" target="_blank">
+          <i class="fab fa-weibo"></i>
+        </a>
+      
+    
+      
+        <a href="https://qm.qq.com/q/MAQoNdBsw6" target="_blank">
+          <i class="fab fa-zhihu"></i>
+        </a>
+      
+    
+      
+        <a href="https://qm.qq.com/q/MAQoNdBsw6" target="_blank">
+          <i class="fab fa-facebook"></i>
+        </a>
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+联系我：djzrs@qq.com | <a class="rss" href="https://xuexi1234567890.github.io/jiyou/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: 'Ov23li7RTellcpoyYZza',
+        clientSecret: 'cb3475011e5f2c7d60df0168c6d41f07a0a19b0c',
+        repo: 'gitalk',
+        owner: 'xuexi1234567890',
+        admin: ['xuexi1234567890'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>Markdown语法 | 集邮</title>
+<meta name="description" content="集邮不是集邮，可能是某种收藏癖好，收集创客相关">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://xuexi1234567890.github.io/jiyou/favicon.ico?v=1727251694138">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://xuexi1234567890.github.io/jiyou/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://xuexi1234567890.github.io/jiyou">
+        <img class="avatar" src="https://xuexi1234567890.github.io/jiyou/images/avatar.png?v=1727251694138" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://xuexi1234567890.github.io/jiyou">
+        <h1 class="site-title">集邮</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="https://xuexi1234567890.github.io/jiyou" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="https://xuexi1234567890.github.io/jiyou/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="https://xuexi1234567890.github.io/jiyou/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="https://xuexi1234567890.github.io/jiyou/qfwytkg2n" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+            <div class="feature-container" style="background-image: url('https://xuexi1234567890.github.io/jiyou/post-images/N3qcaOPfA.png')">
+            </div>
+          
+          <h2 class="post-title">Markdown语法</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2023-01-02</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/CyTkSS16Y/">
+                    Markdown
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content" v-pre>
+            <p>文字的加粗、倾斜和其它强调效果<br>
+文字的代码格式<br>
+图片，链接……</p>
+<!-- more -->
+<h2 id="一-文字的加粗-倾斜和其它强调效果">一、文字的加粗、倾斜和其它强调效果</h2>
+<p>Markdown文件中文字的书写与一般的文字编辑软件一致，直接编写内容即可，关键是如何在Markdown下进行文字的字体设置。</p>
+<p>文字加粗： 将两个星号添加到要加粗的文字两端，如:</p>
+<p>**加粗文字**<br>
+显示为：<strong>加粗文字</strong><br>
+也可以通过选中要加粗的文字使用快捷键Ctrl+B。</p>
+<p>文字斜体： 将一个星号添加到要倾斜的文字两端，如:</p>
+<p>*倾斜文字*<br>
+显示为:<em>倾斜文字</em><br>
+也可以选中要倾斜的文字使用快捷键Ctrl+I。</p>
+<p>同时添加斜体与粗体： 如果要同时为文字添加斜体和粗体，可以在文字前后各添加三个星号，如:</p>
+<p>***同时添加斜体与粗体效果***<br>
+显示为: *** 同时添加斜体与粗体效果*** (没效果就是不支持)<br>
+注意要在添加该效果的文字之前预留一个空格，否则不会显示任何效果。</p>
+<p>在文字上添加删除线： 将两个波浪线添加到要加删除线的文字两端，如:</p>
+<p>~~删除线~~<br>
+显示为:<s>删除线</s><br>
+为文字添加引用效果： 在要添加引用的文字前使用 &gt; 即可。注意，可以不在每一行都添加&gt; ，如果引用之间没有空白行，只在第一行使用&gt; 即可。如果引用之间存在空白行，在空白行的前端同样需要添加&gt; 。引用行与正文之间要用空白行隔开，否则后续正文内容同样会被设置为引用。当存在嵌套引用时，对应增加 &gt; 号即可，嵌套部分前后同样需要用空白行隔开。演示如下(知乎不支持嵌套引用，所以使用效果图片)：</p>
+<blockquote>
+<p>引用abcfd<br>
+aaa<br>
+ddd</p>
+</blockquote>
+<p>引用内部可以包含其它 Markdown 格式元素，但并不是所有格式都支持，需要在实际使用时测试。以上介绍的几种文字处理效果都是支持的。</p>
+<p>注意：虽然一些时候也可以使用下划线来代替上述星号的作用，但是由于不同 Markdown 应用程序会对下划线有不同的处理方式，所以为了兼容性考虑，建议统一使用星号来强调文字。</p>
+<h2 id="二-文字的代码格式">二、文字的代码格式</h2>
+<p>Markdown 的代码格式是它的一大特色，相比于其它文字编辑软件，Markdown 可以更加快速便捷地设置一段文字为代码格式。</p>
+<p>如果要将一段内容表示为代码，在该内容前后两端添加英文反引号即可。为了体现代码格式地不同，一下效果展示就不使用引用了：</p>
+<p>`Hello Markdown!` 显示为：<code>Hello Markdown!</code></p>
+<p>如果要表示为代码的部分本身带有一个或多个反引号，则可以通过将要表示为代码的部分包含在双反引号内：</p>
+<p>``Hello `Markdown`!`` 显示为：<code>Hello `Markdown`!</code></p>
+<p>当需要创建一个代码块时，可以在代码前后分别加三个反引号或者波浪线来表示一个代码块。为了方便编译器对代码进行高亮处理，最好是在代码块前的三个反引号(波浪线)之后指定代码语言，指定后Markdown会根据语言类型来针对性设置显示效果。<br>
+```python<br>
+import time<br>
+while True:<br>
+print(time.ctime())<br>
+time.sleep(5)<br>
+```<br>
+显示效果:</p>
+<pre><code class="language-python">import time
+while True:
+    print(time.ctime())
+    time.sleep(5)
+</code></pre>
+<h2 id="三-markdown中的转义字符">三、Markdown中的转义字符</h2>
+<p>前面我们提到过，Markdown 通过特殊符号来表示文字的信息，比如 # 表示标题级别，* 表示加粗或斜体。那么如果我们需要在正文中表示这些特殊符号并且不希望它被识别成语法的一部分该怎么办？这时就要用到转义字符，举个例子，比如我要在正文中使用反引号，但不希望编辑器将它识别为一段代码，只需要在反引号前加一个反斜线 \ 即可。 演示效果如下：<br>
+**接下来要写一个转义字符**，`然后是另一个转义字符`<br>
+<strong>接下来要写一个转义字符</strong>，<code>然后是另一个转义字符</code><br>
+<img src="https://xuexi1234567890.github.io/jiyou/post-images/1701748229003.png" alt="" loading="lazy"></p>
+<h2 id="四-markdown超链接语法">四、Markdown超链接语法</h2>
+<p><strong>1.1 插入链接：</strong> 链接是一个很广泛的概念，我们插入的图片、网址等都是以链接的形式存在，这里先对一般的超链接进行说明。在 Markdown 编辑中插入链接的语法格式如下：</p>
+<p><code>[链接显示名](链接地址 &quot;链接标题&quot;)</code></p>
+<p>方括号和圆括号之间不需要隔空格。链接显示名是指该链接在预览窗口显示的内容，而链接标题是指当我们将鼠标悬停在该链接上时显示的内容，它并不是必须写的。注意链接标题要用双引号引起并且与链接地址间隔一个空格。举例如下：</p>
+<p><code>[百度网站](https://www.baidu.com  &quot;百度&quot;)</code><br>
+显示为：<a href="https://www.baidu.com" title="百度">百度网站</a></p>
+<p>如果要插入的链接并不需要显示指定的显示名，而是直接以链接的形式显示的话，使用尖括号即可快速创建链接，举例如下：</p>
+<p><code>&lt;https://markdown.com.cn/basic-syntax/links.html&gt;</code><br>
+显示为：<a href="https://markdown.com.cn/basic-syntax/links.html">https://markdown.com.cn/basic-syntax/links.html</a></p>
+<p>注意，许多 Markdown 处理器会自动将 URL 作为链接，包括 VS Code。当我们直接书写一个网页链接时，比如：https://markdown.com.cn/extended-syntax/automatic-url-linking.html</p>
+<p>处理器会自动将其转换成链接。如果想避免使用这一功能，可以通过将网址用反引号定义为代码来禁止:<code>https://markdown.com.cn/extended-syntax/automatic-url-linking.html</code></p>
+<p>**1.2 强调链接： **如果要给链接增加强调，比如加粗或者倾斜，需要在链接语法的整体上（即包括方括号和圆括号）加星号。而如果要给链接添加代码格式，则只需要在方括号内的链接显示名上加反引号即可，添加强调格式后的链接仍然可以作为链接使用。<br>
+<strong>本编辑器不支持语法嵌套</strong></p>
+<h2 id="五-markdown图片链接语法">五、Markdown图片链接语法</h2>
+<p><strong>2.1 插入图片：</strong> Markdown 语法下并不支持我们像其它文字编辑软件一样，直接拖动任意位置的图片即可插入，而是需要将要插入的图片提前保存在 Markdown 文件的同一目录下，使用相对路径插入(使用绝对路径时可能无法正常显示，也不利于文件的转移)。建议在编写的 Markdown 文件所在目录下新建一个专门用于存放插入图片的文件夹 Pictures 。在 VS Code 中添加图片文件到 Markdown 中有如下几种方法：</p>
+<p><strong>1）使用命令行插入：</strong> 在已经将图片保存在文件同一目录内的前提下，在 VS Code 中使用快捷命令 Ctrl+Shift+P 打开 VS Code 命令行，输入 Markdown : Insert Image from Workspace 命令可以快速添加一张图片到当前打开的 markdown 文件内。插入的图片以绝对路径形式显示。这种方法容易显示图片错误，而且操作起来比较繁琐，不建议使用。</p>
+<p><strong>2）使用拖拽插入：</strong> 如果想通过拖拽来将图片插入，只需要从 VS Code 资源管理器中或直接从图片文件夹中拖拽一个图片到 Markdown 代码区后按住 Shift 即可将它放入文件中，预览光标显示的是拖入后图片的位置。插入的图片会自动保存到当前编辑的 Markdown 文件所在目录。注意，中文命名的图片虽然可以插入，但是图片的名称会显示为乱码。</p>
+<p><strong>3）使用语法格式：</strong> 更多情况下我们使用特定的书写格式来导入图片，这更符合我们使用 Markdown 的初衷，也不容易出错。将图片导入Markdown的语法为：</p>
+<p><code>![这是图片](https://xuexi1234567890.github.io/jiyou/post-images/1701749157400.png)</code><br>
+其中 Alt Text 表示插入的图片无法正常显示时图片显示的名称，之后的圆括号内书写的是图片所在的路径，建议使用相对路径，其中 / 开头的路径是相较与工作区根目录来处理的，而以 ./ 开始的路径或没有任何前缀的路径则是相较于当前文件开始处理的。<br>
+<strong>如果有图床建议使用图床或者使用网络图片</strong></p>
+<p>插入图片<br>
+如果需要给插入的图片添加链接的话，只需要将插入图片的语法放入方括号中，然后在方括号后增加圆括号，在圆括号内书写链接。这时如果点击图片的话，就可以跳转到图片代表的链接。<br>
+<a href="https://www.baidu.com" title="点我可以跳转到百度"><img src="https://xuexi1234567890.github.io/jiyou/post-images/1701749682488.png" alt="" loading="lazy"></a><br>
+三、Markdown脚注语法<br>
+脚注本质上也是一种引用类链接，我们之前讲过引用链接的格式，脚注的书写格式与其有所不同。首先是标记名前必须有 ^ 符号，其次是可以不写前面的列表标记名：</p>
+<p><code>正文[^标记名] [^标记名]:脚注内容</code><br>
+正文[^标记名] [^标记名]:脚注内容<br>
+脚注链接<br>
+注意，脚注显示的标号与你的标记名无关，只与其为文章的第几个脚注有关。标记名只是为了便于我们书写时理解其内容。脚注在预览中会自动添加到文章结尾。<br>
+<strong>本编辑器不支持脚注</strong></p>
+<h2 id="六-markdown的段落语法段落格式-列表-表格">六、Markdown的段落语法（段落格式、列表、表格）</h2>
+<p><a href="https://zhuanlan.zhihu.com/p/646877642">第二章_Markdown的段落语法（段落格式、列表、表格）</a></p>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://xuexi1234567890.github.io/jiyou/qfwytkg2n/">
+              <h3 class="post-title">
+                下一篇：关于
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+        
+          <div id="gitalk-container"></div>
+        
+
+        
+      
+
+      <div class="site-footer">
+  <div class="slogan">集邮不是集邮，可能是某种收藏癖好，收集创客相关</div>
+  <div class="social-container">
+    
+      
+        <a href="https://gitee.com/djzrs/jiyou" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+      
+    
+      
+        <a href="https://qm.qq.com/q/MAQoNdBsw6" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+      
+    
+      
+        <a href="https://qm.qq.com/q/MAQoNdBsw6" target="_blank">
+          <i class="fab fa-weibo"></i>
+        </a>
+      
+    
+      
+        <a href="https://qm.qq.com/q/MAQoNdBsw6" target="_blank">
+          <i class="fab fa-zhihu"></i>
+        </a>
+      
+    
+      
+        <a href="https://qm.qq.com/q/MAQoNdBsw6" target="_blank">
+          <i class="fab fa-facebook"></i>
+        </a>
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+联系我：djzrs@qq.com | <a class="rss" href="https://xuexi1234567890.github.io/jiyou/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: 'Ov23li7RTellcpoyYZza',
+        clientSecret: 'cb3475011e5f2c7d60df0168c6d41f07a0a19b0c',
+        repo: 'gitalk',
+        owner: 'xuexi1234567890',
+        admin: ['xuexi1234567890'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

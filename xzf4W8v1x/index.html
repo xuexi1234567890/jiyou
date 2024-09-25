@@ -1,0 +1,307 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>LED Dot Matrix(d1 mini)浅探 | 集邮</title>
+<meta name="description" content="集邮不是集邮，可能是某种收藏癖好，收集创客相关">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://xuexi1234567890.github.io/jiyou/favicon.ico?v=1727251694138">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://xuexi1234567890.github.io/jiyou/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://xuexi1234567890.github.io/jiyou">
+        <img class="avatar" src="https://xuexi1234567890.github.io/jiyou/images/avatar.png?v=1727251694138" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://xuexi1234567890.github.io/jiyou">
+        <h1 class="site-title">集邮</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="https://xuexi1234567890.github.io/jiyou" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="https://xuexi1234567890.github.io/jiyou/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="https://xuexi1234567890.github.io/jiyou/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="https://xuexi1234567890.github.io/jiyou/qfwytkg2n" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+            <div class="feature-container" style="background-image: url('https://xuexi1234567890.github.io/jiyou/post-images/xzf4W8v1x.png')">
+            </div>
+          
+          <h2 class="post-title">LED Dot Matrix(d1 mini)浅探</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2023-12-03</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/jmA3hCgo7/">
+                    max7219
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/3MLFZkLZS/">
+                    microblocks
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/Jxcw9wCQSx/">
+                    wemos
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/IMLWxr7fht/">
+                    D1 mini
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/AE628OJyPU/">
+                    ESP8266
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/xn5evKaZY-/">
+                    iic
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/VwDVQ6CEkZ/">
+                    点阵屏
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/cxNHyxclGu/">
+                    LED
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/SVVW-Vm98t/">
+                    数码管
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/mEv6fNTgKU/">
+                    驱动芯片
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/IjQbraSOBg/">
+                    图形化
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/8I6eob4ZPt/">
+                    1640
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content" v-pre>
+            <p>缘起，群里有老师问microblocks有没有MAX7219点阵屏的库，现在是没有的（20231203）。但是我记得microblocks里面是有类似的点阵屏的库，打开microblocks找到了LED Dot Matrix库。</p>
+<!-- more -->
+<p>缘起，群里有老师问microblocks有没有MAX7219点阵屏的库，现在是没有的（20231203）。但是我记得microblocks里面是有类似的点阵屏的库，打开microblocks找到了LED Dot Matrix库。</p>
+<p><img src="https://xuexi1234567890.github.io/jiyou/post-images/1701606443945.png" alt="" loading="lazy"><br>
+<img src="https://xuexi1234567890.github.io/jiyou/post-images/1701606458092.png" alt="" loading="lazy"></p>
+<p>这个点阵屏是wemos的扩展板，我打开wemos的<a href="https://www.wemos.cc/en/latest/d1_mini_shield/matrix_led.html">官网</a>找个这个模块，从下面图片可以看到驱动芯片的型号：aip1640<br>
+<img src="https://xuexi1234567890.github.io/jiyou/post-images/1701606477496.png" alt="" loading="lazy"></p>
+<p>到立创商城搜索1640可以看到这是一款2 线串口共阴极 8 段 16 位 LED 驱动控制专用电路。有多个厂家均有此型号的芯片，具体每个厂家的芯片能不能互相替代大家可以去仔细读一下数据手册。<br>
+<img src="https://xuexi1234567890.github.io/jiyou/post-images/1701606485432.png" alt="" loading="lazy"><br>
+<img src="https://xuexi1234567890.github.io/jiyou/post-images/1701606494496.png" alt="" loading="lazy"></p>
+<p>简单在淘宝搜索了一下使用此驱动芯片的只有LED Dot Matrix版型的点阵屏模块或者红绿双色的，单色没有其他通用的版型。<br>
+淘宝常用的8*8LED点阵模块有两三种，分别是是max7219驱动，595驱动，16k33驱动。其中arduino生态下max7219应该是最常用的。<br>
+<img src="https://xuexi1234567890.github.io/jiyou/post-images/1701752170128.png" alt="" loading="lazy"><br>
+<img src="https://xuexi1234567890.github.io/jiyou/post-images/1701752181033.png" alt="" loading="lazy"><br>
+<img src="https://xuexi1234567890.github.io/jiyou/post-images/1701752191992.png" alt="" loading="lazy"><br>
+<img src="https://xuexi1234567890.github.io/jiyou/post-images/1701752202776.png" alt="" loading="lazy"></p>
+<p><a href="https://gitee.com/djzrs/jiyou/blob/file/AIP1640%E6%95%B0%E6%8D%AE%E6%89%8B%E5%86%8C.PDF" title="AIP1640数据手册">AIP1640数据手册</a><br>
+<a href="https://gitee.com/djzrs/jiyou/blob/file/MAX7219M%E6%95%B0%E6%8D%AE%E6%89%8B%E5%86%8C.PDF" title="MAX7219M数据手册">MAX7219M数据手册</a></p>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://xuexi1234567890.github.io/jiyou/9KDiHbMsM/">
+              <h3 class="post-title">
+                下一篇：gitee初次使用
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+        
+          <div id="gitalk-container"></div>
+        
+
+        
+      
+
+      <div class="site-footer">
+  <div class="slogan">集邮不是集邮，可能是某种收藏癖好，收集创客相关</div>
+  <div class="social-container">
+    
+      
+        <a href="https://gitee.com/djzrs/jiyou" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+      
+    
+      
+        <a href="https://qm.qq.com/q/MAQoNdBsw6" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+      
+    
+      
+        <a href="https://qm.qq.com/q/MAQoNdBsw6" target="_blank">
+          <i class="fab fa-weibo"></i>
+        </a>
+      
+    
+      
+        <a href="https://qm.qq.com/q/MAQoNdBsw6" target="_blank">
+          <i class="fab fa-zhihu"></i>
+        </a>
+      
+    
+      
+        <a href="https://qm.qq.com/q/MAQoNdBsw6" target="_blank">
+          <i class="fab fa-facebook"></i>
+        </a>
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+联系我：djzrs@qq.com | <a class="rss" href="https://xuexi1234567890.github.io/jiyou/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: 'Ov23li7RTellcpoyYZza',
+        clientSecret: 'cb3475011e5f2c7d60df0168c6d41f07a0a19b0c',
+        repo: 'gitalk',
+        owner: 'xuexi1234567890',
+        admin: ['xuexi1234567890'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

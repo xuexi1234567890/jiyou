@@ -1,0 +1,487 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>ESP32cam通过HTTP上传图片 | 集邮</title>
+<meta name="description" content="集邮不是集邮，可能是某种收藏癖好，收集创客相关">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://xuexi1234567890.github.io/jiyou/favicon.ico?v=1727251694138">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://xuexi1234567890.github.io/jiyou/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://xuexi1234567890.github.io/jiyou">
+        <img class="avatar" src="https://xuexi1234567890.github.io/jiyou/images/avatar.png?v=1727251694138" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://xuexi1234567890.github.io/jiyou">
+        <h1 class="site-title">集邮</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="https://xuexi1234567890.github.io/jiyou" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="https://xuexi1234567890.github.io/jiyou/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="https://xuexi1234567890.github.io/jiyou/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="https://xuexi1234567890.github.io/jiyou/qfwytkg2n" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+            <div class="feature-container" style="background-image: url('https://xuexi1234567890.github.io/jiyou/post-images/tmaeG9IDc.jpg')">
+            </div>
+          
+          <h2 class="post-title">ESP32cam通过HTTP上传图片</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2024-03-28</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/C86Eetw3P/">
+                    ESP32cam
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://xuexi1234567890.github.io/jiyou/9lKnmK5vwH/">
+                    ESP32
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content" v-pre>
+            <p>不知道为啥我的下载底座放久了竟然坏了真神奇，折腾了两天反复的找代码让GPT修改都不行，最后找到了一个可以的很兴奋。</p>
+<!-- more -->
+<p>原教程来自：<a href="https://randomnerdtutorials.com/esp32-cam-http-post-php-arduino/">https://randomnerdtutorials.com/esp32-cam-http-post-php-arduino/</a></p>
+<p>网上好多的教程包括很牛的从浏览器查看视频流的程序都是1.x老版本的SDK，这个代码可以使用2.x的SDK，如果你经常写ESP32那你不用切换SDK版本很棒。</p>
+<p>硬件：ESP32cam（最普通的那种，如果是特殊优化过的卖家一定有教程和技术支持）</p>
+<p>​	配套的下载底座或者usb转ttl（什么样的都行）</p>
+<p>​	连接线（使用下载底座不需要）</p>
+<p>接线图：<br>
+注意：如果使用usb转ttl，IO0下载时接地下完之后就不用接地了否则程序不运行。<br>
+一定使用5V供电。</p>
+<figure data-type="image" tabindex="1"><img src="https://xuexi1234567890.github.io/jiyou/post-images/ESP32-CAM-FTDI-programmer-5V-supply.png" alt="上传代码 ESP32-CAM 相机板 新草图上传代码 FTDI 程序员" loading="lazy"></figure>
+<p><strong>搭建arduino开发环境</strong></p>
+<p>已有请跳过</p>
+<p>下载arduino ide2.0解压即可。<a href="https://downloads.arduino.cc/arduino-ide/arduino-ide_2.3.2_Windows_64bit.zip">windows版</a> <a href="https://www.arduino.cc/en/software">其他版本</a></p>
+<p>esp32SDK离线版，双击等进度条跑完即可。<a href="https://www.123pan.com/s/dJrKVv-bZXB.html">Windows</a></p>
+<p>如果安装后有问题不能使用请到论坛寻找解决方案，<a href="https://arduino.me/a/esp32">https://arduino.me/a/esp32</a></p>
+<p><strong>arduino程序</strong></p>
+<pre><code class="language-c">/*
+  Rui Santos
+  Complete project details at https://RandomNerdTutorials.com/esp32-cam-post-image-photo-server/
+  
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files.
+  
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+
+  修改：maikemaker
+  20240328
+*/
+
+#include &lt;Arduino.h&gt;
+#include &lt;WiFi.h&gt;
+#include &quot;soc/soc.h&quot;
+#include &quot;soc/rtc_cntl_reg.h&quot;
+#include &quot;esp_camera.h&quot;
+
+const char* ssid = &quot;waoo2111280&quot;;
+const char* password = &quot;waoo2111280&quot;;
+
+String serverName = &quot;192.168.22.14&quot;;   // 服务器地址
+//String serverName = &quot;example.com&quot;;   // OR REPLACE WITH YOUR DOMAIN NAME
+
+String serverPath = &quot;/upload&quot;;     // 路径
+
+const int serverPort = 8080;//端口
+
+WiFiClient client;
+
+// CAMERA_MODEL_AI_THINKER
+#define PWDN_GPIO_NUM     32
+#define RESET_GPIO_NUM    -1
+#define XCLK_GPIO_NUM      0
+#define SIOD_GPIO_NUM     26
+#define SIOC_GPIO_NUM     27
+
+#define Y9_GPIO_NUM       35
+#define Y8_GPIO_NUM       34
+#define Y7_GPIO_NUM       39
+#define Y6_GPIO_NUM       36
+#define Y5_GPIO_NUM       21
+#define Y4_GPIO_NUM       19
+#define Y3_GPIO_NUM       18
+#define Y2_GPIO_NUM        5
+#define VSYNC_GPIO_NUM    25
+#define HREF_GPIO_NUM     23
+#define PCLK_GPIO_NUM     22
+
+const int timerInterval = 20000;    // 上传间隔
+unsigned long previousMillis = 0;   // last time image was sent
+
+void setup() {
+  WRITE_PERI_REG(RTC_CNTL_BROWN_OUT_REG, 0); 
+  Serial.begin(115200);
+
+  WiFi.mode(WIFI_STA);
+  Serial.println();
+  Serial.print(&quot;Connecting to &quot;);
+  Serial.println(ssid);
+  WiFi.begin(ssid, password);  
+  while (WiFi.status() != WL_CONNECTED) {
+    Serial.print(&quot;.&quot;);
+    delay(500);
+  }
+  Serial.println();
+  Serial.print(&quot;ESP32-CAM IP Address: &quot;);
+  Serial.println(WiFi.localIP());
+
+  camera_config_t config;
+  config.ledc_channel = LEDC_CHANNEL_0;
+  config.ledc_timer = LEDC_TIMER_0;
+  config.pin_d0 = Y2_GPIO_NUM;
+  config.pin_d1 = Y3_GPIO_NUM;
+  config.pin_d2 = Y4_GPIO_NUM;
+  config.pin_d3 = Y5_GPIO_NUM;
+  config.pin_d4 = Y6_GPIO_NUM;
+  config.pin_d5 = Y7_GPIO_NUM;
+  config.pin_d6 = Y8_GPIO_NUM;
+  config.pin_d7 = Y9_GPIO_NUM;
+  config.pin_xclk = XCLK_GPIO_NUM;
+  config.pin_pclk = PCLK_GPIO_NUM;
+  config.pin_vsync = VSYNC_GPIO_NUM;
+  config.pin_href = HREF_GPIO_NUM;
+  config.pin_sscb_sda = SIOD_GPIO_NUM;
+  config.pin_sscb_scl = SIOC_GPIO_NUM;
+  config.pin_pwdn = PWDN_GPIO_NUM;
+  config.pin_reset = RESET_GPIO_NUM;
+  config.xclk_freq_hz = 20000000;
+  config.pixel_format = PIXFORMAT_JPEG;
+
+  // init with high specs to pre-allocate larger buffers
+  if(psramFound()){
+    config.frame_size = FRAMESIZE_SVGA;
+    config.jpeg_quality = 10;  //0-63 lower number means higher quality
+    config.fb_count = 2;
+  } else {
+    config.frame_size = FRAMESIZE_CIF;
+    config.jpeg_quality = 12;  //0-63 lower number means higher quality
+    config.fb_count = 1;
+  }
+  
+  // camera init相机初始化
+  esp_err_t err = esp_camera_init(&amp;config);
+  if (err != ESP_OK) {
+    Serial.printf(&quot;Camera init failed with error 0x%x&quot;, err);
+    delay(1000);
+    ESP.restart();
+  }
+
+  sendPhoto(); 
+}
+
+void loop() {
+  unsigned long currentMillis = millis();
+  if (currentMillis - previousMillis &gt;= timerInterval) {
+    sendPhoto();
+    previousMillis = currentMillis;
+  }
+}
+//发送照片
+String sendPhoto() {
+  String getAll;
+  String getBody;
+
+  camera_fb_t * fb = NULL;
+  fb = esp_camera_fb_get();
+  if(!fb) {
+    Serial.println(&quot;Camera capture failed&quot;);
+    delay(1000);
+    ESP.restart();
+  }
+  
+  Serial.println(&quot;Connecting to server: &quot; + serverName);
+
+  if (client.connect(serverName.c_str(), serverPort)) {
+    Serial.println(&quot;Connection successful!&quot;);    
+    String head = &quot;--RandomNerdTutorials\r\nContent-Disposition: form-data; name=\&quot;imageFile\&quot;; filename=\&quot;esp32-cam.jpg\&quot;\r\nContent-Type: image/jpeg\r\n\r\n&quot;;
+    String tail = &quot;\r\n--RandomNerdTutorials--\r\n&quot;;
+
+    uint32_t imageLen = fb-&gt;len;
+    uint32_t extraLen = head.length() + tail.length();
+    uint32_t totalLen = imageLen + extraLen;
+  
+    client.println(&quot;POST &quot; + serverPath + &quot; HTTP/1.1&quot;);
+    client.println(&quot;Host: &quot; + serverName);
+    client.println(&quot;Content-Length: &quot; + String(totalLen));
+    client.println(&quot;Content-Type: multipart/form-data; boundary=RandomNerdTutorials&quot;);
+    client.println();
+    client.print(head);
+  
+    uint8_t *fbBuf = fb-&gt;buf;
+    size_t fbLen = fb-&gt;len;
+    for (size_t n=0; n&lt;fbLen; n=n+1024) {
+      if (n+1024 &lt; fbLen) {
+        client.write(fbBuf, 1024);
+        fbBuf += 1024;
+      }
+      else if (fbLen%1024&gt;0) {
+        size_t remainder = fbLen%1024;
+        client.write(fbBuf, remainder);
+      }
+    }   
+    client.print(tail);
+    
+    esp_camera_fb_return(fb);
+    
+    int timoutTimer = 10000;
+    long startTimer = millis();
+    boolean state = false;
+    
+    while ((startTimer + timoutTimer) &gt; millis()) {
+      Serial.print(&quot;.&quot;);
+      delay(100);      
+      while (client.available()) {
+        char c = client.read();
+        if (c == '\n') {
+          if (getAll.length()==0) { state=true; }
+          getAll = &quot;&quot;;
+        }
+        else if (c != '\r') { getAll += String(c); }
+        if (state==true) { getBody += String(c); }
+        startTimer = millis();
+      }
+      if (getBody.length()&gt;0) { break; }
+    }
+    Serial.println();
+    client.stop();
+    Serial.println(getBody);
+  }
+  else {
+    getBody = &quot;Connection to &quot; + serverName +  &quot; failed.&quot;;
+    Serial.println(getBody);
+  }
+  return getBody;
+}
+</code></pre>
+<p>板子选择AI Thinker ESP32-CAM</p>
+<p>配置：</p>
+<figure data-type="image" tabindex="2"><img src="https://xuexi1234567890.github.io/jiyou/post-images/image-20240328181647098.png" alt="image-20240328181647098" loading="lazy"></figure>
+<p><strong>服务端程序</strong></p>
+<pre><code class="language-python">from flask import Flask, request
+from werkzeug.utils import secure_filename
+import os
+
+app = Flask(__name__)
+
+# 定义上传文件的目标目录
+UPLOAD_FOLDER = 'uploads'
+if not os.path.exists(UPLOAD_FOLDER):
+    os.makedirs(UPLOAD_FOLDER)
+
+# 将 UPLOAD_FOLDER 配置添加到 Flask 应用程序中
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+# 允许上传的文件扩展名集合
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
+
+@app.route('/upload', methods=['POST'])
+def upload_file():
+    # 检查请求中是否包含文件
+    if 'imageFile' not in request.files:
+        return '没有上传文件部分'
+    
+    file = request.files['imageFile']
+    
+    # 如果用户未选择文件，或者文件名为空，则返回错误消息
+    if file.filename == '':
+        return '没有选择文件'
+    
+    # 检查文件是否为图像
+    if file and allowed_file(file.filename):
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        return '文件上传成功'
+    else:
+        return '文件类型不允许或格式不正确'
+
+# 检查文件扩展名是否允许
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8080)
+
+
+</code></pre>
+<p>完</p>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://xuexi1234567890.github.io/jiyou/oyVSS0oy8/">
+              <h3 class="post-title">
+                下一篇：ESP32CAM项目资料收集
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+        
+          <div id="gitalk-container"></div>
+        
+
+        
+      
+
+      <div class="site-footer">
+  <div class="slogan">集邮不是集邮，可能是某种收藏癖好，收集创客相关</div>
+  <div class="social-container">
+    
+      
+        <a href="https://gitee.com/djzrs/jiyou" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+      
+    
+      
+        <a href="https://qm.qq.com/q/MAQoNdBsw6" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+      
+    
+      
+        <a href="https://qm.qq.com/q/MAQoNdBsw6" target="_blank">
+          <i class="fab fa-weibo"></i>
+        </a>
+      
+    
+      
+        <a href="https://qm.qq.com/q/MAQoNdBsw6" target="_blank">
+          <i class="fab fa-zhihu"></i>
+        </a>
+      
+    
+      
+        <a href="https://qm.qq.com/q/MAQoNdBsw6" target="_blank">
+          <i class="fab fa-facebook"></i>
+        </a>
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+联系我：djzrs@qq.com | <a class="rss" href="https://xuexi1234567890.github.io/jiyou/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: 'Ov23li7RTellcpoyYZza',
+        clientSecret: 'cb3475011e5f2c7d60df0168c6d41f07a0a19b0c',
+        repo: 'gitalk',
+        owner: 'xuexi1234567890',
+        admin: ['xuexi1234567890'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>
