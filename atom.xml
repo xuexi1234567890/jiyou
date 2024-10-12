@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xuexi1234567890.github.io/jiyou</id>
     <title>集邮</title>
-    <updated>2024-09-25T08:35:51.000Z</updated>
+    <updated>2024-10-12T07:33:49.633Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xuexi1234567890.github.io/jiyou"/>
     <link rel="self" href="https://xuexi1234567890.github.io/jiyou/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://xuexi1234567890.github.io/jiyou/images/avatar.png</logo>
     <icon>https://xuexi1234567890.github.io/jiyou/favicon.ico</icon>
     <rights>All rights reserved 2024, 集邮</rights>
+    <entry>
+        <title type="html"><![CDATA[ESP32S3 Pico microblocks VM配置]]></title>
+        <id>https://xuexi1234567890.github.io/jiyou/bZQxG8YKTZ/</id>
+        <link href="https://xuexi1234567890.github.io/jiyou/bZQxG8YKTZ/">
+        </link>
+        <updated>2024-10-12T07:31:50.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[学而思掌机资料汇总]]></title>
         <id>https://xuexi1234567890.github.io/jiyou/4_tr1bwch/</id>
@@ -95,21 +102,6 @@
 ]]></summary>
         <content type="html"><![CDATA[<p>乌龙<br>
 我一看8块钱还包邮还带字库买一块回来试试，今天问了店铺客服字库怎么用客服说不带字库呀，原来是配图错了他家美工把图配错了，然后他就送了我一块带字库的串口屏，本来我还想学着韩老师来个退款不退货呢</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[使用platformio编译microblocks固件]]></title>
-        <id>https://xuexi1234567890.github.io/jiyou/e8Ji4GX3-/</id>
-        <link href="https://xuexi1234567890.github.io/jiyou/e8Ji4GX3-/">
-        </link>
-        <updated>2024-03-03T11:32:35.000Z</updated>
-        <summary type="html"><![CDATA[<p>使用platformio编译microblocks固件</p>
-<p>以ESP32-C3为例，其他板子参考种瓜博客：<a href="https://wwj718.github.io/post/%E7%BC%96%E7%A8%8B/microblocks-dev-notes/">https://wwj718.github.io/post/%E7%BC%96%E7%A8%8B/microblocks-dev-notes/</a></p>
-<p>全文基于Windows系统</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>使用platformio编译microblocks固件</p>
-<p>以ESP32-C3为例，其他板子参考种瓜博客：<a href="https://wwj718.github.io/post/%E7%BC%96%E7%A8%8B/microblocks-dev-notes/">https://wwj718.github.io/post/%E7%BC%96%E7%A8%8B/microblocks-dev-notes/</a></p>
-<p>全文基于Windows系统</p>
 ]]></content>
     </entry>
 </feed>
